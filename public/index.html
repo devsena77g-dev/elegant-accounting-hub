@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sterling & Associates | Premier Accounting & Financial Advisory</title>
+    <meta name="description" content="Expert accounting, tax planning, and financial advisory services. Trusted by 500+ businesses for over 25 years.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#1e3a5f',
+                            950: '#102a43',
+                        },
+                        gold: {
+                            50: '#fdfbf3',
+                            100: '#faf5e1',
+                            200: '#f4e8be',
+                            300: '#edd891',
+                            400: '#e4c55e',
+                            500: '#c9a227',
+                            600: '#b8911f',
+                            700: '#96741b',
+                            800: '#7a5e1d',
+                            900: '#654d1c',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                        'count-up': 'countUp 2s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #c9a227 0%, #e4c55e 50%, #c9a227 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a5f 0%, #243b53 50%, #102a43 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #c9a227 0%, #e4c55e 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(30, 58, 95, 0.25);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #c9a227, #e4c55e);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.1) 0%, rgba(228, 197, 94, 0.1) 100%);
+        }
+        
+        .blob {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #c9a227;
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+        }
+        
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-content.open {
+            max-height: 500px;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-body bg-white text-navy-900 antialiased">
+    <div id="root"></div>
+    
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        
+        // ============ ICONS COMPONENT ============
+        const Icons = {
+            Menu: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            ),
+            X: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            ),
+            ChevronDown: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+            ),
+            ChevronRight: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            ),
+            Phone: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+            ),
+            Email: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+            ),
+            Location: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+            ),
+            Calculator: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 002.25 2.25h10.5a2.25 2.25 0 002.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0012 2.25z" />
+                </svg>
+            ),
+            Document: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                </svg>
+            ),
+            Chart: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                </svg>
+            ),
+            Shield: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+            ),
+            Users: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                </svg>
+            ),
+            Briefcase: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                </svg>
+            ),
+            Star: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                    <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+                </svg>
+            ),
+            Quote: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-12 h-12 text-gold-200">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+            ),
+            Check: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+            ),
+            ArrowRight: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+            ),
+            Clock: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            ),
+            Calendar: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                </svg>
+            ),
+            LinkedIn: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            ),
+            Twitter: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            ),
+            Facebook: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
+                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                </svg>
+            ),
+        };
+        
+        // ============ ANIMATED COUNTER ============
+        const AnimatedCounter = ({ end, duration = 2000, suffix = '' }) => {
+            const [count, setCount] = useState(0);
+            const [isVisible, setIsVisible] = useState(false);
+            const ref = useRef(null);
+            
+            useEffect(() => {
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if (entry.isIntersecting) {
+                            setIsVisible(true);
+                        }
+                    },
+                    { threshold: 0.5 }
+                );
+                
+                if (ref.current) observer.observe(ref.current);
+                return () => observer.disconnect();
+            }, []);
+            
+            useEffect(() => {
+                if (!isVisible) return;
+                
+                let startTime;
+                const animate = (currentTime) => {
+                    if (!startTime) startTime = currentTime;
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    setCount(Math.floor(progress * end));
+                    if (progress < 1) requestAnimationFrame(animate);
+                };
+                requestAnimationFrame(animate);
+            }, [isVisible, end, duration]);
+            
+            return <span ref={ref}>{count}{suffix}</span>;
+        };
+        
+        // ============ NAVIGATION ============
+        const Navigation = () => {
+            const [isScrolled, setIsScrolled] = useState(false);
+            const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+            
+            useEffect(() => {
+                const handleScroll = () => setIsScrolled(window.scrollY > 50);
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+            
+            const navLinks = [
+                { name: 'Home', href: '#home' },
+                { name: 'Services', href: '#services' },
+                { name: 'About', href: '#about' },
+                { name: 'Team', href: '#team' },
+                { name: 'Pricing', href: '#pricing' },
+                { name: 'Resources', href: '#resources' },
+                { name: 'Contact', href: '#contact' },
+            ];
+            
+            return (
+                <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="flex justify-between items-center">
+                            <a href="#home" className="flex items-center space-x-3">
+                                <div className="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center">
+                                    <span className="text-navy-900 font-display font-bold text-xl">S</span>
+                                </div>
+                                <span className={`font-display text-xl font-semibold ${isScrolled ? 'text-navy-900' : 'text-white'}`}>
+                                    Sterling & Associates
+                                </span>
+                            </a>
+                            
+                            <div className="hidden lg:flex items-center space-x-8">
+                                {navLinks.map((link) => (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        className={`nav-link font-medium text-sm tracking-wide transition-colors ${isScrolled ? 'text-navy-700 hover:text-gold-600' : 'text-white/90 hover:text-white'}`}
+                                    >
+                                        {link.name}
+                                    </a>
+                                ))}
+                                <a
+                                    href="#contact"
+                                    className="gold-gradient text-navy-900 px-6 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-gold-500/30 transition-all duration-300 hover:-translate-y-0.5"
+                                >
+                                    Free Consultation
+                                </a>
+                            </div>
+                            
+                            <button
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                className={`lg:hidden ${isScrolled ? 'text-navy-900' : 'text-white'}`}
+                            >
+                                {isMobileMenuOpen ? <Icons.X /> : <Icons.Menu />}
+                            </button>
+                        </div>
+                        
+                        {/* Mobile Menu */}
+                        {isMobileMenuOpen && (
+                            <div className="lg:hidden mt-4 pb-4 border-t border-navy-100">
+                                <div className="flex flex-col space-y-3 pt-4">
+                                    {navLinks.map((link) => (
+                                        <a
+                                            key={link.name}
+                                            href={link.href}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                            className="text-navy-700 hover:text-gold-600 font-medium py-2"
+                                        >
+                                            {link.name}
+                                        </a>
+                                    ))}
+                                    <a
+                                        href="#contact"
+                                        className="gold-gradient text-navy-900 px-6 py-3 rounded-full font-semibold text-center mt-4"
+                                    >
+                                        Free Consultation
+                                    </a>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </nav>
+            );
+        };
+        
+        // ============ HERO SECTION ============
+        const HeroSection = () => {
+            return (
+                <section id="home" className="relative min-h-screen hero-gradient overflow-hidden">
+                    {/* Decorative Elements */}
+                    <div className="absolute top-20 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl animate-float"></div>
+                    <div className="absolute bottom-20 left-10 w-96 h-96 bg-gold-400/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+                    <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-gold-400 rounded-full animate-pulse-slow"></div>
+                    <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-gold-300/50 rounded-full animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+                    
+                    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+                        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
+                            <div className="text-center lg:text-left">
+                                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in">
+                                    <span className="w-2 h-2 bg-gold-400 rounded-full mr-2 animate-pulse"></span>
+                                    <span className="text-gold-200 text-sm font-medium">Trusted by 500+ Businesses Nationwide</span>
+                                </div>
+                                
+                                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                                    Your Financial
+                                    <span className="block gradient-text">Success Partner</span>
+                                </h1>
+                                
+                                <p className="text-lg sm:text-xl text-navy-200 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                                    Expert accounting, tax planning, and financial advisory services tailored for businesses that demand excellence. Let us handle the numbers while you focus on growth.
+                                </p>
+                                
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+                                    <a
+                                        href="#contact"
+                                        className="gold-gradient text-navy-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:shadow-gold-500/30 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+                                    >
+                                        Schedule Free Consultation
+                                        <Icons.ArrowRight />
+                                    </a>
+                                    <a
+                                        href="#services"
+                                        className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center gap-2"
+                                    >
+                                        Explore Services
+                                    </a>
+                                </div>
+                                
+                                {/* Trust Badges */}
+                                <div className="mt-12 pt-8 border-t border-white/10 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+                                    <p className="text-navy-300 text-sm mb-4">Certified & Accredited</p>
+                                    <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
+                                        <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                            <span className="text-white font-semibold text-sm">CPA Certified</span>
+                                        </div>
+                                        <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                            <span className="text-white font-semibold text-sm">AICPA Member</span>
+                                        </div>
+                                        <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                            <span className="text-white font-semibold text-sm">QuickBooks ProAdvisor</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Stats Cards */}
+                            <div className="relative animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 card-hover">
+                                        <div className="text-4xl font-display font-bold text-white mb-2">
+                                            <AnimatedCounter end={25} suffix="+" />
+                                        </div>
+                                        <p className="text-navy-200">Years of Excellence</p>
+                                    </div>
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 card-hover mt-8">
+                                        <div className="text-4xl font-display font-bold text-gold-400 mb-2">
+                                            $<AnimatedCounter end={500} suffix="M+" />
+                                        </div>
+                                        <p className="text-navy-200">Tax Savings Delivered</p>
+                                    </div>
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 card-hover">
+                                        <div className="text-4xl font-display font-bold text-white mb-2">
+                                            <AnimatedCounter end={98} suffix="%" />
+                                        </div>
+                                        <p className="text-navy-200">Client Retention Rate</p>
+                                    </div>
+                                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 card-hover mt-8">
+                                        <div className="text-4xl font-display font-bold text-gold-400 mb-2">
+                                            <AnimatedCounter end={50} suffix="+" />
+                                        </div>
+                                        <p className="text-navy-200">Expert Accountants</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Scroll Indicator */}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+                            <div className="w-1.5 h-3 bg-gold-400 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ CLIENTS SECTION ============
+        const ClientsSection = () => {
+            const clients = [
+                'TechCorp Industries', 'Global Ventures', 'Summit Holdings', 'Apex Solutions',
+                'Prime Enterprises', 'Vista Group', 'Meridian Partners', 'Atlas Corporation'
+            ];
+            
+            return (
+                <section className="py-16 bg-navy-50 border-y border-navy-100">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <p className="text-center text-navy-500 font-medium mb-8">Trusted by Leading Companies</p>
+                        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                            {clients.map((client, index) => (
+                                <div key={index} className="text-navy-400 font-display font-semibold text-lg hover:text-navy-600 transition-colors cursor-default">
+                                    {client}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ SERVICES SECTION ============
+        const ServicesSection = () => {
+            const services = [
+                {
+                    icon: <Icons.Calculator />,
+                    title: 'Tax Planning & Preparation',
+                    description: 'Strategic tax planning to minimize liabilities and maximize returns. We handle individual, business, and international tax compliance.',
+                    features: ['Federal & State Tax Returns', 'Tax Strategy Optimization', 'IRS Representation', 'International Tax Planning']
+                },
+                {
+                    icon: <Icons.Document />,
+                    title: 'Audit & Assurance',
+                    description: 'Comprehensive audit services that provide stakeholders with confidence in your financial statements.',
+                    features: ['Financial Statement Audits', 'Internal Audits', 'SOC Examinations', 'Agreed-Upon Procedures']
+                },
+                {
+                    icon: <Icons.Chart />,
+                    title: 'Financial Advisory',
+                    description: 'Expert guidance for complex financial decisions, from M&A transactions to business valuations.',
+                    features: ['M&A Advisory', 'Business Valuation', 'Restructuring Services', 'Forensic Accounting']
+                },
+                {
+                    icon: <Icons.Briefcase />,
+                    title: 'Bookkeeping Services',
+                    description: 'Accurate and timely bookkeeping that gives you a clear picture of your financial health.',
+                    features: ['Monthly Bookkeeping', 'Financial Reporting', 'Accounts Payable/Receivable', 'Bank Reconciliation']
+                },
+                {
+                    icon: <Icons.Users />,
+                    title: 'Payroll Solutions',
+                    description: 'Streamlined payroll processing that ensures compliance and keeps your team happy.',
+                    features: ['Payroll Processing', 'Tax Filings & Deposits', 'Employee Benefits Admin', 'Time & Attendance']
+                },
+                {
+                    icon: <Icons.Shield />,
+                    title: 'Business Formation',
+                    description: 'From entity selection to compliance setup, we help launch your business on solid ground.',
+                    features: ['Entity Selection', 'State Registrations', 'Operating Agreements', 'Compliance Setup']
+                },
+            ];
+            
+            return (
+                <section id="services" className="py-24 bg-white">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center max-w-3xl mx-auto mb-16">
+                            <span className="text-gold-600 font-semibold text-sm uppercase tracking-wider">Our Services</span>
+                            <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mt-4 mb-6">
+                                Comprehensive Financial Solutions
+                            </h2>
+                            <p className="text-lg text-navy-600">
+                                From startups to enterprises, we provide tailored accounting and advisory services that drive growth and ensure compliance.
+                            </p>
+                        </div>
+                        
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {services.map((service, index) => (
+                                <div
+                                    key={index}
+                                    className="group bg-white rounded-2xl p-8 border border-navy-100 card-hover hover:border-gold-300"
+                                >
+                                    <div className="service-icon w-16 h-16 rounded-xl flex items-center justify-center text-gold-600 mb-6 group-hover:scale-110 transition-transform">
+                                        {service.icon}
+                                    </div>
+                                    <h3 className="font-display text-xl font-bold text-navy-900 mb-3">{service.title}</h3>
+                                    <p className="text-navy-600 mb-6">{service.description}</p>
+                                    <ul className="space-y-2">
+                                        {service.features.map((feature, idx) => (
+                                            <li key={idx} className="flex items-center text-sm text-navy-500">
+                                                <span className="text-gold-500 mr-2"><Icons.Check /></span>
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <a href="#contact" className="mt-6 inline-flex items-center text-gold-600 font-semibold hover:text-gold-700 transition-colors">
+                                        Learn More <span className="ml-2"><Icons.ChevronRight /></span>
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ ABOUT SECTION ============
+        const AboutSection = () => {
+            return (
+                <section id="about" className="py-24 bg-navy-50">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="grid lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <span className="text-gold-600 font-semibold text-sm uppercase tracking-wider">About Us</span>
+                                <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mt-4 mb-6">
+                                    25 Years of Financial Excellence
+                                </h2>
+                                <p className="text-lg text-navy-600 mb-6">
+                                    Founded in 1999, Sterling & Associates has grown from a small local practice to one of the region's most respected accounting firms. Our commitment to excellence, integrity, and client success has remained unchanged.
+                                </p>
+                                <p className="text-navy-600 mb-8">
+                                    We combine decades of expertise with modern technology to deliver accounting solutions that truly make a difference. Our team of 50+ certified professionals serves clients across all industries, from emerging startups to established enterprises.
+                                </p>
+                                
+                                <div className="grid grid-cols-2 gap-6 mb-8">
+                                    <div>
+                                        <div className="text-3xl font-display font-bold text-gold-600 mb-1">500+</div>
+                                        <p className="text-navy-600">Active Clients</p>
+                                    </div>
+                                    <div>
+                                        <div className="text-3xl font-display font-bold text-gold-600 mb-1">$500M+</div>
+                                        <p className="text-navy-600">Tax Savings</p>
+                                    </div>
+                                    <div>
+                                        <div className="text-3xl font-display font-bold text-gold-600 mb-1">50+</div>
+                                        <p className="text-navy-600">Expert Team</p>
+                                    </div>
+                                    <div>
+                                        <div className="text-3xl font-display font-bold text-gold-600 mb-1">98%</div>
+                                        <p className="text-navy-600">Client Retention</p>
+                                    </div>
+                                </div>
+                                
+                                <a href="#team" className="inline-flex items-center gold-gradient text-navy-900 px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-gold-500/30 transition-all">
+                                    Meet Our Team <span className="ml-2"><Icons.ArrowRight /></span>
+                                </a>
+                            </div>
+                            
+                            <div className="relative">
+                                <div className="bg-white rounded-2xl p-8 shadow-xl">
+                                    <h3 className="font-display text-2xl font-bold text-navy-900 mb-6">Our Core Values</h3>
+                                    <div className="space-y-6">
+                                        {[
+                                            { title: 'Integrity', desc: 'We uphold the highest ethical standards in everything we do.' },
+                                            { title: 'Excellence', desc: 'We deliver exceptional quality and continuously improve our services.' },
+                                            { title: 'Partnership', desc: 'We build lasting relationships based on trust and mutual success.' },
+                                            { title: 'Innovation', desc: 'We embrace technology to provide efficient, modern solutions.' },
+                                        ].map((value, index) => (
+                                            <div key={index} className="flex items-start">
+                                                <div className="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                                                    <span className="text-navy-900 font-bold">{index + 1}</span>
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-semibold text-navy-900">{value.title}</h4>
+                                                    <p className="text-navy-600 text-sm">{value.desc}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="absolute -bottom-4 -right-4 w-24 h-24 gold-gradient rounded-full opacity-20 blur-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ TEAM SECTION ============
+        const TeamSection = () => {
+            const team = [
+                {
+                    name: 'Robert Sterling',
+                    role: 'Managing Partner',
+                    bio: 'CPA with 30+ years experience in corporate taxation and strategic planning.',
+                    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face'
+                },
+                {
+                    name: 'Sarah Mitchell',
+                    role: 'Tax Director',
+                    bio: 'Former IRS senior advisor with expertise in complex tax matters.',
+                    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face'
+                },
+                {
+                    name: 'Michael Chen',
+                    role: 'Audit Partner',
+                    bio: 'Big 4 alumnus specializing in financial services and tech industry audits.',
+                    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face'
+                },
+                {
+                    name: 'Jennifer Walsh',
+                    role: 'Advisory Partner',
+                    bio: 'M&A specialist with $2B+ in completed transactions.',
+                    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face'
+                },
+            ];
+            
+            return (
+                <section id="team" className="py-24 bg-white">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center max-w-3xl mx-auto mb-16">
+                            <span className="text-gold-600 font-semibold text-sm uppercase tracking-wider">Our Team</span>
+                            <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mt-4 mb-6">
+                                Meet Our Leadership
+                            </h2>
+                            <p className="text-lg text-navy-600">
+                                Our partners bring decades of combined experience from Big 4 firms, industry, and government to serve your needs.
+                            </p>
+                        </div>
+                        
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {team.map((member, index) => (
+                                <div key={index} className="group text-center">
+                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
+                                        <img
+                                            src={member.image}
+                                            alt={member.name}
+                                            className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                                            <div className="flex gap-3">
+                                                <a href="#" className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-gold-500 transition-colors">
+                                                    <Icons.LinkedIn />
+                                                </a>
+                                                <a href="#" className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-gold-500 transition-colors">
+                                                    <Icons.Email />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 className="font-display text-xl font-bold text-navy-900">{member.name}</h3>
+                                    <p className="text-gold-600 font-medium mb-2">{member.role}</p>
+                                    <p className="text-navy-600 text-sm">{member.bio}</p>
+                                </div>
+                            ))}
+                        </div>
+                        
+                        <div className="text-center mt-12">
+                            <a href="#contact" className="inline-flex items-center text-gold-600 font-semibold hover:text-gold-700 transition-colors">
+                                View All Team Members <span className="ml-2"><Icons.ArrowRight /></span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ TESTIMONIALS SECTION ============
+        const TestimonialsSection = () => {
+            const [currentIndex, setCurrentIndex] = useState(0);
+            
+            const testimonials = [
+                {
+                    quote: "Sterling & Associates transformed our financial operations. Their tax strategies saved us over $200K in the first year alone.",
+                    author: "David Miller",
+                    role: "CEO, TechCorp Industries",
+                    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
+                },
+                {
+                    quote: "The audit team's attention to detail and professionalism exceeded our expectations. They're true partners in our success.",
+                    author: "Amanda Chen",
+                    role: "CFO, Global Ventures",
+                    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face"
+                },
+                {
+                    quote: "Their M&A advisory was invaluable during our acquisition. They navigated complex due diligence with expertise.",
+                    author: "James Thompson",
+                    role: "Founder, Summit Holdings",
+                    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=face"
+                },
+            ];
+            
+            useEffect(() => {
+                const interval = setInterval(() => {
+                    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+                }, 5000);
+                return () => clearInterval(interval);
+            }, []);
+            
+            return (
+                <section className="py-24 hero-gradient relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-full">
+                        <div className="absolute top-20 right-20 w-64 h-64 bg-gold-500/10 rounded-full blur-3xl"></div>
+                        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gold-400/5 rounded-full blur-3xl"></div>
+                    </div>
+                    
+                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                        <div className="text-center mb-16">
+                            <span className="text-gold-400 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+                            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
+                                What Our Clients Say
+                            </h2>
+                        </div>
+                        
+                        <div className="relative">
+                            {testimonials.map((testimonial, index) => (
+                                <div
+                                    key={index}
+                                    className={`transition-all duration-500 ${index === currentIndex ? 'opacity-100 translate-x-0' : 'opacity-0 absolute inset-0 translate-x-8'}`}
+                                >
+                                    <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 border border-white/20">
+                                        <div className="mb-6 text-gold-300/50">
+                                            <Icons.Quote />
+                                        </div>
+                                        <p className="text-xl sm:text-2xl text-white font-light leading-relaxed mb-8">
+                                            "{testimonial.quote}"
+                                        </p>
+                                        <div className="flex items-center">
+                                            <img
+                                                src={testimonial.image}
+                                                alt={testimonial.author}
+                                                className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-gold-400"
+                                            />
+                                            <div>
+                                                <div className="font-display font-bold text-white">{testimonial.author}</div>
+                                                <div className="text-navy-300">{testimonial.role}</div>
+                                            </div>
+                                            <div className="ml-auto flex gap-1 text-gold-400">
+                                                {[...Array(5)].map((_, i) => <Icons.Star key={i} />)}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        
+                        <div className="flex justify-center gap-2 mt-8">
+                            {testimonials.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setCurrentIndex(index)}
+                                    className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? 'bg-gold-400 w-8' : 'bg-white/30 hover:bg-white/50'}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ PRICING SECTION ============
+        const PricingSection = () => {
+            const plans = [
+                {
+                    name: 'Starter',
+                    price: '299',
+                    period: '/month',
+                    description: 'Perfect for freelancers and small businesses',
+                    features: [
+                        'Monthly bookkeeping',
+                        'Quarterly financial statements',
+                        'Annual tax preparation',
+                        'Email support',
+                        'Cloud accounting setup',
+                    ],
+                    cta: 'Get Started',
+                    popular: false,
+                },
+                {
+                    name: 'Professional',
+                    price: '599',
+                    period: '/month',
+                    description: 'Ideal for growing companies',
+                    features: [
+                        'Everything in Starter',
+                        'Payroll processing (up to 25 employees)',
+                        'Monthly financial review calls',
+                        'Tax planning & strategy',
+                        'Priority support',
+                        'Dedicated account manager',
+                    ],
+                    cta: 'Get Started',
+                    popular: true,
+                },
+                {
+                    name: 'Enterprise',
+                    price: 'Custom',
+                    period: '',
+                    description: 'For large organizations with complex needs',
+                    features: [
+                        'Everything in Professional',
+                        'Unlimited payroll',
+                        'CFO advisory services',
+                        'Audit preparation & support',
+                        'International tax planning',
+                        'Dedicated team',
+                        'SLA guarantees',
+                    ],
+                    cta: 'Contact Us',
+                    popular: false,
+                },
+            ];
+            
+            return (
+                <section id="pricing" className="py-24 bg-navy-50">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center max-w-3xl mx-auto mb-16">
+                            <span className="text-gold-600 font-semibold text-sm uppercase tracking-wider">Pricing</span>
+                            <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mt-4 mb-6">
+                                Transparent Pricing Plans
+                            </h2>
+                            <p className="text-lg text-navy-600">
+                                Choose a plan that fits your business needs. All plans include our commitment to excellence.
+                            </p>
+                        </div>
+                        
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {plans.map((plan, index) => (
+                                <div
+                                    key={index}
+                                    className={`relative bg-white rounded-2xl p-8 ${plan.popular ? 'ring-2 ring-gold-500 shadow-xl shadow-gold-500/10' : 'border border-navy-100'} card-hover`}
+                                >
+                                    {plan.popular && (
+                                        <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                                            <span className="gold-gradient text-navy-900 text-sm font-semibold px-4 py-1 rounded-full">
+                                                Most Popular
+                                            </span>
+                                        </div>
+                                    )}
+                                    
+                                    <div className="text-center mb-8">
+                                        <h3 className="font-display text-2xl font-bold text-navy-900 mb-2">{plan.name}</h3>
+                                        <p className="text-navy-600 text-sm mb-4">{plan.description}</p>
+                                        <div className="flex items-baseline justify-center">
+                                            {plan.price !== 'Custom' && <span className="text-navy-500 text-xl">$</span>}
+                                            <span className="font-display text-5xl font-bold text-navy-900">{plan.price}</span>
+                                            <span className="text-navy-500 ml-1">{plan.period}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <ul className="space-y-4 mb-8">
+                                        {plan.features.map((feature, idx) => (
+                                            <li key={idx} className="flex items-start">
+                                                <span className="text-gold-500 mr-3 mt-0.5"><Icons.Check /></span>
+                                                <span className="text-navy-600">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    
+                                    <a
+                                        href="#contact"
+                                        className={`block w-full py-4 rounded-full font-semibold text-center transition-all ${plan.popular
+                                            ? 'gold-gradient text-navy-900 hover:shadow-lg hover:shadow-gold-500/30'
+                                            : 'bg-navy-100 text-navy-900 hover:bg-navy-200'}`}
+                                    >
+                                        {plan.cta}
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ FAQ SECTION ============
+        const FAQSection = () => {
+            const [openIndex, setOpenIndex] = useState(0);
+            
+            const faqs = [
+                {
+                    question: 'What types of businesses do you work with?',
+                    answer: 'We serve businesses of all sizes across various industries, including technology, healthcare, real estate, manufacturing, professional services, and more. Our team has specialized expertise to address the unique accounting and tax needs of each industry.'
+                },
+                {
+                    question: 'How do you ensure data security and confidentiality?',
+                    answer: 'We employ bank-level encryption, secure client portals, and strict access controls. Our firm is compliant with SOC 2 Type II standards, and all team members undergo regular security training. Your data privacy is our top priority.'
+                },
+                {
+                    question: 'What accounting software do you support?',
+                    answer: 'We work with all major accounting platforms including QuickBooks, Xero, NetSuite, Sage, and FreshBooks. As certified ProAdvisors, we can help you choose and implement the best solution for your business needs.'
+                },
+                {
+                    question: 'How quickly can you respond to urgent matters?',
+                    answer: 'Our Professional and Enterprise clients receive priority support with guaranteed response times. For urgent IRS notices or time-sensitive matters, we offer same-day response and can schedule immediate consultations.'
+                },
+                {
+                    question: 'Do you offer virtual/remote services?',
+                    answer: 'Absolutely! We serve clients nationwide through our secure digital platforms. Virtual meetings, electronic document sharing, and cloud-based collaboration allow us to provide the same high-quality service regardless of your location.'
+                },
+                {
+                    question: 'What makes Sterling & Associates different from other accounting firms?',
+                    answer: 'Our combination of Big 4 expertise, personalized service, and innovative technology sets us apart. We proactively identify opportunities and risks, not just report on the past. Our 98% client retention rate speaks to the relationships we build.'
+                },
+            ];
+            
+            return (
+                <section className="py-24 bg-white">
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-16">
+                            <span className="text-gold-600 font-semibold text-sm uppercase tracking-wider">FAQ</span>
+                            <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mt-4 mb-6">
+                                Frequently Asked Questions
+                            </h2>
+                        </div>
+                        
+                        <div className="space-y-4">
+                            {faqs.map((faq, index) => (
+                                <div
+                                    key={index}
+                                    className={`border rounded-xl overflow-hidden transition-all ${openIndex === index ? 'border-gold-300 bg-gold-50/30' : 'border-navy-100'}`}
+                                >
+                                    <button
+                                        onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                                        className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-navy-50/50 transition-colors"
+                                    >
+                                        <span className="font-display font-semibold text-navy-900 pr-4">{faq.question}</span>
+                                        <span className={`text-gold-600 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}>
+                                            <Icons.ChevronDown />
+                                        </span>
+                                    </button>
+                                    <div className={`faq-content ${openIndex === index ? 'open' : ''}`}>
+                                        <div className="px-6 pb-5 text-navy-600">
+                                            {faq.answer}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ RESOURCES/BLOG SECTION ============
+        const ResourcesSection = () => {
+            const resources = [
+                {
+                    category: 'Tax Planning',
+                    title: '2024 Tax Law Changes: What Businesses Need to Know',
+                    excerpt: 'Stay ahead of the curve with our comprehensive guide to the latest tax legislation affecting businesses.',
+                    date: 'Jan 5, 2024',
+                    readTime: '8 min read',
+                    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop'
+                },
+                {
+                    category: 'Financial Advisory',
+                    title: 'M&A Due Diligence: A Complete Checklist',
+                    excerpt: 'Essential steps and considerations for successful merger and acquisition transactions.',
+                    date: 'Dec 28, 2023',
+                    readTime: '12 min read',
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop'
+                },
+                {
+                    category: 'Bookkeeping',
+                    title: 'Cash Flow Management Best Practices for SMBs',
+                    excerpt: 'Practical strategies to improve your cash flow and maintain financial health.',
+                    date: 'Dec 15, 2023',
+                    readTime: '6 min read',
+                    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=400&fit=crop'
+                },
+            ];
+            
+            return (
+                <section id="resources" className="py-24 bg-navy-50">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                            <div>
+                                <span className="text-gold-600 font-semibold text-sm uppercase tracking-wider">Resources</span>
+                                <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mt-4">
+                                    Insights & Articles
+                                </h2>
+                            </div>
+                            <a href="#" className="inline-flex items-center text-gold-600 font-semibold hover:text-gold-700 transition-colors mt-4 md:mt-0">
+                                View All Articles <span className="ml-2"><Icons.ArrowRight /></span>
+                            </a>
+                        </div>
+                        
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {resources.map((resource, index) => (
+                                <article key={index} className="bg-white rounded-2xl overflow-hidden card-hover group">
+                                    <div className="relative overflow-hidden">
+                                        <img
+                                            src={resource.image}
+                                            alt={resource.title}
+                                            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute top-4 left-4">
+                                            <span className="bg-white/90 backdrop-blur-sm text-navy-900 text-xs font-semibold px-3 py-1 rounded-full">
+                                                {resource.category}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="p-6">
+                                        <div className="flex items-center text-navy-500 text-sm mb-3">
+                                            <span className="flex items-center"><Icons.Calendar /><span className="ml-1">{resource.date}</span></span>
+                                            <span className="mx-2">•</span>
+                                            <span className="flex items-center"><Icons.Clock /><span className="ml-1">{resource.readTime}</span></span>
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition-colors">
+                                            {resource.title}
+                                        </h3>
+                                        <p className="text-navy-600 text-sm mb-4">{resource.excerpt}</p>
+                                        <a href="#" className="inline-flex items-center text-gold-600 font-semibold text-sm hover:text-gold-700 transition-colors">
+                                            Read More <span className="ml-1"><Icons.ChevronRight /></span>
+                                        </a>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ CTA SECTION ============
+        const CTASection = () => {
+            return (
+                <section className="py-24 bg-white">
+                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="hero-gradient rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/10 rounded-full blur-3xl"></div>
+                            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold-400/5 rounded-full blur-3xl"></div>
+                            
+                            <div className="relative">
+                                <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+                                    Ready to Transform Your Finances?
+                                </h2>
+                                <p className="text-xl text-navy-200 mb-8 max-w-2xl mx-auto">
+                                    Schedule a free consultation with our experts and discover how we can help your business thrive.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <a
+                                        href="#contact"
+                                        className="gold-gradient text-navy-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:shadow-gold-500/30 transition-all inline-flex items-center justify-center gap-2"
+                                    >
+                                        Schedule Free Consultation
+                                        <Icons.ArrowRight />
+                                    </a>
+                                    <a
+                                        href="tel:+15551234567"
+                                        className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2"
+                                    >
+                                        <Icons.Phone />
+                                        (555) 123-4567
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ CONTACT SECTION ============
+        const ContactSection = () => {
+            const [formData, setFormData] = useState({
+                name: '',
+                email: '',
+                phone: '',
+                company: '',
+                service: '',
+                message: '',
+            });
+            const [isSubmitting, setIsSubmitting] = useState(false);
+            const [isSubmitted, setIsSubmitted] = useState(false);
+            
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                setIsSubmitting(true);
+                setTimeout(() => {
+                    setIsSubmitting(false);
+                    setIsSubmitted(true);
+                    setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
+                }, 1500);
+            };
+            
+            const handleChange = (e) => {
+                setFormData({ ...formData, [e.target.name]: e.target.value });
+            };
+            
+            return (
+                <section id="contact" className="py-24 bg-navy-50">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="grid lg:grid-cols-2 gap-16">
+                            <div>
+                                <span className="text-gold-600 font-semibold text-sm uppercase tracking-wider">Contact Us</span>
+                                <h2 className="font-display text-4xl sm:text-5xl font-bold text-navy-900 mt-4 mb-6">
+                                    Let's Start a Conversation
+                                </h2>
+                                <p className="text-lg text-navy-600 mb-8">
+                                    Ready to take your business finances to the next level? Get in touch with our team for a free consultation.
+                                </p>
+                                
+                                <div className="space-y-6 mb-8">
+                                    <div className="flex items-start">
+                                        <div className="w-12 h-12 gold-gradient rounded-xl flex items-center justify-center text-navy-900 flex-shrink-0 mr-4">
+                                            <Icons.Location />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-navy-900">Visit Us</h4>
+                                            <p className="text-navy-600">123 Financial Plaza, Suite 500<br />New York, NY 10001</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start">
+                                        <div className="w-12 h-12 gold-gradient rounded-xl flex items-center justify-center text-navy-900 flex-shrink-0 mr-4">
+                                            <Icons.Phone />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-navy-900">Call Us</h4>
+                                            <p className="text-navy-600">(555) 123-4567</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start">
+                                        <div className="w-12 h-12 gold-gradient rounded-xl flex items-center justify-center text-navy-900 flex-shrink-0 mr-4">
+                                            <Icons.Email />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-navy-900">Email Us</h4>
+                                            <p className="text-navy-600">info@sterlingassociates.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div className="bg-white rounded-xl p-6 border border-navy-100">
+                                    <h4 className="font-display font-semibold text-navy-900 mb-3">Office Hours</h4>
+                                    <div className="space-y-2 text-navy-600">
+                                        <div className="flex justify-between">
+                                            <span>Monday - Friday</span>
+                                            <span className="font-medium">9:00 AM - 6:00 PM</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span>Saturday</span>
+                                            <span className="font-medium">10:00 AM - 2:00 PM</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span>Sunday</span>
+                                            <span className="font-medium">Closed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div className="bg-white rounded-2xl p-8 shadow-xl border border-navy-100">
+                                {isSubmitted ? (
+                                    <div className="h-full flex flex-col items-center justify-center text-center py-12">
+                                        <div className="w-16 h-16 gold-gradient rounded-full flex items-center justify-center mb-6">
+                                            <Icons.Check />
+                                        </div>
+                                        <h3 className="font-display text-2xl font-bold text-navy-900 mb-3">Thank You!</h3>
+                                        <p className="text-navy-600 mb-6">Your message has been received. We'll get back to you within 24 hours.</p>
+                                        <button
+                                            onClick={() => setIsSubmitted(false)}
+                                            className="text-gold-600 font-semibold hover:text-gold-700"
+                                        >
+                                            Send Another Message
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <form onSubmit={handleSubmit}>
+                                        <h3 className="font-display text-2xl font-bold text-navy-900 mb-6">Request a Free Consultation</h3>
+                                        
+                                        <div className="grid md:grid-cols-2 gap-4 mb-4">
+                                            <div>
+                                                <label className="block text-navy-700 font-medium mb-2 text-sm">Full Name *</label>
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    value={formData.name}
+                                                    onChange={handleChange}
+                                                    required
+                                                    className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:ring-2 focus:ring-gold-500/20 transition-all"
+                                                    placeholder="John Smith"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-navy-700 font-medium mb-2 text-sm">Email Address *</label>
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    required
+                                                    className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:ring-2 focus:ring-gold-500/20 transition-all"
+                                                    placeholder="john@company.com"
+                                                />
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="grid md:grid-cols-2 gap-4 mb-4">
+                                            <div>
+                                                <label className="block text-navy-700 font-medium mb-2 text-sm">Phone Number</label>
+                                                <input
+                                                    type="tel"
+                                                    name="phone"
+                                                    value={formData.phone}
+                                                    onChange={handleChange}
+                                                    className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:ring-2 focus:ring-gold-500/20 transition-all"
+                                                    placeholder="(555) 123-4567"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-navy-700 font-medium mb-2 text-sm">Company Name</label>
+                                                <input
+                                                    type="text"
+                                                    name="company"
+                                                    value={formData.company}
+                                                    onChange={handleChange}
+                                                    className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:ring-2 focus:ring-gold-500/20 transition-all"
+                                                    placeholder="Your Company"
+                                                />
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="mb-4">
+                                            <label className="block text-navy-700 font-medium mb-2 text-sm">Service Interested In</label>
+                                            <select
+                                                name="service"
+                                                value={formData.service}
+                                                onChange={handleChange}
+                                                className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:ring-2 focus:ring-gold-500/20 transition-all bg-white"
+                                            >
+                                                <option value="">Select a service</option>
+                                                <option value="tax">Tax Planning & Preparation</option>
+                                                <option value="audit">Audit & Assurance</option>
+                                                <option value="advisory">Financial Advisory</option>
+                                                <option value="bookkeeping">Bookkeeping Services</option>
+                                                <option value="payroll">Payroll Solutions</option>
+                                                <option value="formation">Business Formation</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div className="mb-6">
+                                            <label className="block text-navy-700 font-medium mb-2 text-sm">Message</label>
+                                            <textarea
+                                                name="message"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                rows="4"
+                                                className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:ring-2 focus:ring-gold-500/20 transition-all resize-none"
+                                                placeholder="Tell us about your needs..."
+                                            ></textarea>
+                                        </div>
+                                        
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="w-full gold-gradient text-navy-900 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-gold-500/30 transition-all disabled:opacity-70 flex items-center justify-center"
+                                        >
+                                            {isSubmitting ? (
+                                                <>
+                                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                    </svg>
+                                                    Sending...
+                                                </>
+                                            ) : (
+                                                'Schedule Consultation'
+                                            )}
+                                        </button>
+                                    </form>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // ============ FOOTER ============
+        const Footer = () => {
+            const [email, setEmail] = useState('');
+            
+            const footerLinks = {
+                services: [
+                    { name: 'Tax Planning', href: '#services' },
+                    { name: 'Audit & Assurance', href: '#services' },
+                    { name: 'Financial Advisory', href: '#services' },
+                    { name: 'Bookkeeping', href: '#services' },
+                    { name: 'Payroll Solutions', href: '#services' },
+                ],
+                company: [
+                    { name: 'About Us', href: '#about' },
+                    { name: 'Our Team', href: '#team' },
+                    { name: 'Careers', href: '#' },
+                    { name: 'News & Insights', href: '#resources' },
+                    { name: 'Contact', href: '#contact' },
+                ],
+                resources: [
+                    { name: 'Tax Calculator', href: '#' },
+                    { name: 'Financial Templates', href: '#' },
+                    { name: 'Industry Reports', href: '#' },
+                    { name: 'Webinars', href: '#' },
+                    { name: 'Client Portal', href: '#' },
+                ],
+            };
+            
+            return (
+                <footer className="bg-navy-950 text-white">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        {/* Newsletter */}
+                        <div className="py-12 border-b border-navy-800">
+                            <div className="grid lg:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 className="font-display text-2xl font-bold mb-2">Stay Informed</h3>
+                                    <p className="text-navy-300">Subscribe to our newsletter for the latest tax tips and financial insights.</p>
+                                </div>
+                                <form className="flex gap-3" onSubmit={(e) => e.preventDefault()}>
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="Enter your email"
+                                        className="flex-1 px-4 py-3 rounded-full bg-navy-900 border border-navy-700 text-white placeholder-navy-400 focus:outline-none focus:border-gold-500"
+                                    />
+                                    <button
+                                        type="submit"
+                                        className="gold-gradient text-navy-900 px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-gold-500/30 transition-all"
+                                    >
+                                        Subscribe
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        {/* Main Footer */}
+                        <div className="py-12 grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                            <div className="lg:col-span-2">
+                                <div className="flex items-center space-x-3 mb-6">
+                                    <div className="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center">
+                                        <span className="text-navy-900 font-display font-bold text-xl">S</span>
+                                    </div>
+                                    <span className="font-display text-xl font-semibold text-white">
+                                        Sterling & Associates
+                                    </span>
+                                </div>
+                                <p className="text-navy-300 mb-6 max-w-sm">
+                                    Your trusted partner for comprehensive accounting, tax, and financial advisory services since 1999.
+                                </p>
+                                <div className="flex gap-4">
+                                    <a href="#" className="w-10 h-10 bg-navy-800 rounded-full flex items-center justify-center text-navy-300 hover:bg-gold-500 hover:text-navy-900 transition-colors">
+                                        <Icons.LinkedIn />
+                                    </a>
+                                    <a href="#" className="w-10 h-10 bg-navy-800 rounded-full flex items-center justify-center text-navy-300 hover:bg-gold-500 hover:text-navy-900 transition-colors">
+                                        <Icons.Twitter />
+                                    </a>
+                                    <a href="#" className="w-10 h-10 bg-navy-800 rounded-full flex items-center justify-center text-navy-300 hover:bg-gold-500 hover:text-navy-900 transition-colors">
+                                        <Icons.Facebook />
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 className="font-semibold text-white mb-4">Services</h4>
+                                <ul className="space-y-3">
+                                    {footerLinks.services.map((link, index) => (
+                                        <li key={index}>
+                                            <a href={link.href} className="text-navy-300 hover:text-gold-400 transition-colors">
+                                                {link.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 className="font-semibold text-white mb-4">Company</h4>
+                                <ul className="space-y-3">
+                                    {footerLinks.company.map((link, index) => (
+                                        <li key={index}>
+                                            <a href={link.href} className="text-navy-300 hover:text-gold-400 transition-colors">
+                                                {link.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 className="font-semibold text-white mb-4">Resources</h4>
+                                <ul className="space-y-3">
+                                    {footerLinks.resources.map((link, index) => (
+                                        <li key={index}>
+                                            <a href={link.href} className="text-navy-300 hover:text-gold-400 transition-colors">
+                                                {link.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        {/* Bottom Footer */}
+                        <div className="py-6 border-t border-navy-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                            <p className="text-navy-400 text-sm">
+                                © 2024 Sterling & Associates. All rights reserved.
+                            </p>
+                            <div className="flex gap-6 text-sm">
+                                <a href="#" className="text-navy-400 hover:text-gold-400 transition-colors">Privacy Policy</a>
+                                <a href="#" className="text-navy-400 hover:text-gold-400 transition-colors">Terms of Service</a>
+                                <a href="#" className="text-navy-400 hover:text-gold-400 transition-colors">Cookie Policy</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            );
+        };
+        
+        // ============ MAIN APP ============
+        const App = () => {
+            return (
+                <div className="min-h-screen">
+                    <Navigation />
+                    <HeroSection />
+                    <ClientsSection />
+                    <ServicesSection />
+                    <AboutSection />
+                    <TeamSection />
+                    <TestimonialsSection />
+                    <PricingSection />
+                    <FAQSection />
+                    <ResourcesSection />
+                    <CTASection />
+                    <ContactSection />
+                    <Footer />
+                </div>
+            );
+        };
+        
+        // Render
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
