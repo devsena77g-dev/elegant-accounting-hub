@@ -184,6 +184,27 @@
             background-size: 200% 100%;
             animation: shimmer 2s infinite;
         }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #c9a227 0%, #e4c55e 100%);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(201, 162, 39, 0.4);
+        }
+
+        .range-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #c9a227 0%, #e4c55e 100%);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 12px rgba(201, 162, 39, 0.4);
+        }
     </style>
 </head>
 <body class="font-body bg-white text-navy-900 antialiased">
@@ -217,6 +238,11 @@
             ChevronRight: () => (
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            ),
+            ChevronLeft: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
             ),
             Phone: () => (
@@ -310,6 +336,57 @@
                     <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                 </svg>
             ),
+            Lock: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+            ),
+            Eye: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            ),
+            EyeOff: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                </svg>
+            ),
+            Download: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+            ),
+            Folder: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                </svg>
+            ),
+            Receipt: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0c1.1.128 1.907 1.077 1.907 2.185zM9.75 9h.008v.008H9.75V9zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm4.125 4.5h.008v.008h-.008V13.5zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+            ),
+            TrendingUp: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                </svg>
+            ),
+            Play: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
+                    <path fillRule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd" />
+                </svg>
+            ),
+            ArrowTrendUp: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                </svg>
+            ),
+            ArrowTrendDown: () => (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6L9 12.75l4.286-4.286a11.948 11.948 0 014.306 6.43l.776 2.898m0 0l3.182-5.511m-3.182 5.51l-5.511-3.181" />
+                </svg>
+            ),
         };
         
         // ============ ANIMATED COUNTER ============
@@ -347,9 +424,311 @@
             
             return <span ref={ref}>{count}{suffix}</span>;
         };
+
+        // ============ SERVICES DATA ============
+        const servicesData = [
+            {
+                id: 'tax-planning',
+                icon: <Icons.Calculator />,
+                title: 'Tax Planning & Preparation',
+                shortDesc: 'Strategic tax planning to minimize liabilities and maximize returns.',
+                description: 'Our comprehensive tax planning and preparation services are designed to help individuals and businesses navigate complex tax regulations while maximizing savings. We combine proactive strategy with meticulous preparation to ensure compliance and optimize your tax position.',
+                features: ['Federal & State Tax Returns', 'Tax Strategy Optimization', 'IRS Representation', 'International Tax Planning'],
+                benefits: [
+                    'Reduce tax liability by up to 40%',
+                    'Year-round tax planning support',
+                    'Audit protection and representation',
+                    'Multi-state and international expertise'
+                ],
+                process: [
+                    { step: 1, title: 'Initial Assessment', desc: 'We review your current tax situation and identify opportunities' },
+                    { step: 2, title: 'Strategy Development', desc: 'Custom tax strategy tailored to your goals and circumstances' },
+                    { step: 3, title: 'Implementation', desc: 'Execute tax-saving strategies throughout the year' },
+                    { step: 4, title: 'Preparation & Filing', desc: 'Accurate preparation and timely filing of all returns' },
+                    { step: 5, title: 'Ongoing Support', desc: 'Year-round support and quarterly planning reviews' }
+                ],
+                caseStudy: {
+                    client: 'TechCorp Industries',
+                    challenge: 'Facing a $450K tax bill with limited deductions',
+                    solution: 'Implemented R&D tax credits and cost segregation study',
+                    result: 'Reduced tax liability by $180K (40% savings)'
+                }
+            },
+            {
+                id: 'audit',
+                icon: <Icons.Document />,
+                title: 'Audit & Assurance',
+                shortDesc: 'Comprehensive audit services for stakeholder confidence.',
+                description: 'Our audit and assurance services provide independent, objective assessments of your financial statements. We help organizations build trust with stakeholders, meet regulatory requirements, and identify opportunities for operational improvement.',
+                features: ['Financial Statement Audits', 'Internal Audits', 'SOC Examinations', 'Agreed-Upon Procedures'],
+                benefits: [
+                    'Enhanced credibility with stakeholders',
+                    'Identification of control weaknesses',
+                    'Regulatory compliance assurance',
+                    'Improved financial reporting quality'
+                ],
+                process: [
+                    { step: 1, title: 'Planning', desc: 'Understanding your business and assessing risk areas' },
+                    { step: 2, title: 'Fieldwork', desc: 'Testing controls and substantive procedures' },
+                    { step: 3, title: 'Analysis', desc: 'Evaluating findings and identifying issues' },
+                    { step: 4, title: 'Reporting', desc: 'Clear, actionable audit reports' },
+                    { step: 5, title: 'Follow-up', desc: 'Support for implementing recommendations' }
+                ],
+                caseStudy: {
+                    client: 'Global Ventures',
+                    challenge: 'Preparing for IPO with complex financial structure',
+                    solution: 'Comprehensive audit readiness and SOX compliance program',
+                    result: 'Successfully completed IPO with clean audit opinion'
+                }
+            },
+            {
+                id: 'advisory',
+                icon: <Icons.Chart />,
+                title: 'Financial Advisory',
+                shortDesc: 'Expert guidance for complex financial decisions.',
+                description: 'Our financial advisory team provides strategic guidance for major business decisions. From M&A transactions to business valuations and restructuring, we help you navigate complexity with confidence and achieve optimal outcomes.',
+                features: ['M&A Advisory', 'Business Valuation', 'Restructuring Services', 'Forensic Accounting'],
+                benefits: [
+                    'Data-driven decision making',
+                    'Maximized transaction value',
+                    'Risk mitigation strategies',
+                    'Expert negotiation support'
+                ],
+                process: [
+                    { step: 1, title: 'Discovery', desc: 'Understanding your objectives and constraints' },
+                    { step: 2, title: 'Analysis', desc: 'Deep-dive financial and market analysis' },
+                    { step: 3, title: 'Strategy', desc: 'Developing actionable recommendations' },
+                    { step: 4, title: 'Execution', desc: 'Supporting implementation and negotiations' },
+                    { step: 5, title: 'Optimization', desc: 'Post-transaction integration support' }
+                ],
+                caseStudy: {
+                    client: 'Summit Holdings',
+                    challenge: 'Acquiring competitor with complex due diligence',
+                    solution: 'Comprehensive financial due diligence and valuation',
+                    result: 'Negotiated $3.2M reduction in purchase price'
+                }
+            },
+            {
+                id: 'bookkeeping',
+                icon: <Icons.Briefcase />,
+                title: 'Bookkeeping Services',
+                shortDesc: 'Accurate and timely bookkeeping for clear financial insights.',
+                description: 'Our professional bookkeeping services give you a clear, accurate picture of your financial health. We handle the day-to-day financial record-keeping so you can focus on growing your business with confidence.',
+                features: ['Monthly Bookkeeping', 'Financial Reporting', 'Accounts Payable/Receivable', 'Bank Reconciliation'],
+                benefits: [
+                    'Real-time financial visibility',
+                    'Reduced errors and discrepancies',
+                    'Improved cash flow management',
+                    'Tax-ready financials year-round'
+                ],
+                process: [
+                    { step: 1, title: 'Setup', desc: 'Configure your accounting system and chart of accounts' },
+                    { step: 2, title: 'Data Collection', desc: 'Secure collection of financial documents' },
+                    { step: 3, title: 'Processing', desc: 'Accurate categorization and entry of transactions' },
+                    { step: 4, title: 'Reconciliation', desc: 'Monthly bank and account reconciliations' },
+                    { step: 5, title: 'Reporting', desc: 'Customized financial reports and insights' }
+                ],
+                caseStudy: {
+                    client: 'Apex Solutions',
+                    challenge: '18 months of backlogged bookkeeping and inaccurate records',
+                    solution: 'Complete cleanup and implementation of automated systems',
+                    result: 'Real-time financials and 20 hours/month saved'
+                }
+            },
+            {
+                id: 'payroll',
+                icon: <Icons.Users />,
+                title: 'Payroll Solutions',
+                shortDesc: 'Streamlined payroll processing with full compliance.',
+                description: 'Our comprehensive payroll solutions ensure your employees are paid accurately and on time, every time. We handle all aspects of payroll processing, tax filings, and compliance so you can focus on your team.',
+                features: ['Payroll Processing', 'Tax Filings & Deposits', 'Employee Benefits Admin', 'Time & Attendance'],
+                benefits: [
+                    '100% accuracy guarantee',
+                    'Automatic tax calculations and filings',
+                    'Employee self-service portal',
+                    'Compliance with all regulations'
+                ],
+                process: [
+                    { step: 1, title: 'Onboarding', desc: 'Setup employees and payroll schedules' },
+                    { step: 2, title: 'Time Collection', desc: 'Integrate time tracking systems' },
+                    { step: 3, title: 'Processing', desc: 'Calculate wages, deductions, and taxes' },
+                    { step: 4, title: 'Distribution', desc: 'Direct deposit and pay stub delivery' },
+                    { step: 5, title: 'Filing', desc: 'Timely tax deposits and reporting' }
+                ],
+                caseStudy: {
+                    client: 'Prime Enterprises',
+                    challenge: 'Managing payroll for 150 employees across 5 states',
+                    solution: 'Centralized payroll with multi-state compliance',
+                    result: 'Zero compliance issues and 35% cost reduction'
+                }
+            },
+            {
+                id: 'business-formation',
+                icon: <Icons.Shield />,
+                title: 'Business Formation',
+                shortDesc: 'From entity selection to compliance, launch on solid ground.',
+                description: 'Starting a business involves critical decisions that impact taxes, liability, and operations for years to come. Our business formation services ensure you choose the right structure and establish proper compliance from day one.',
+                features: ['Entity Selection', 'State Registrations', 'Operating Agreements', 'Compliance Setup'],
+                benefits: [
+                    'Optimal tax structure from day one',
+                    'Asset protection strategies',
+                    'Proper legal documentation',
+                    'Ongoing compliance support'
+                ],
+                process: [
+                    { step: 1, title: 'Consultation', desc: 'Understand your business goals and needs' },
+                    { step: 2, title: 'Entity Analysis', desc: 'Compare LLC, S-Corp, C-Corp options' },
+                    { step: 3, title: 'Formation', desc: 'File articles and obtain EIN' },
+                    { step: 4, title: 'Documentation', desc: 'Draft operating agreements and bylaws' },
+                    { step: 5, title: 'Compliance', desc: 'Setup ongoing compliance requirements' }
+                ],
+                caseStudy: {
+                    client: 'Vista Group',
+                    challenge: 'Converting from sole proprietorship with tax issues',
+                    solution: 'S-Corp election with proper payroll structure',
+                    result: 'Saved $48K in self-employment taxes annually'
+                }
+            },
+        ];
+
+        // ============ CASE STUDIES DATA ============
+        const caseStudiesData = [
+            {
+                id: 1,
+                title: 'Manufacturing Giant Cuts Tax Bill by 40%',
+                client: 'TechCorp Industries',
+                industry: 'Manufacturing',
+                service: 'Tax Planning',
+                image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=500&fit=crop',
+                challenge: 'TechCorp Industries faced a massive $450,000 tax liability with their existing accounting firm providing only basic compliance services. They had significant R&D investments but weren\'t leveraging available tax credits.',
+                solution: 'Our team conducted a comprehensive tax analysis and identified multiple opportunities for savings including R&D tax credits, cost segregation studies, and strategic timing of equipment purchases.',
+                results: [
+                    { metric: 'Tax Savings', before: '$0', after: '$180,000', improvement: '40% reduction' },
+                    { metric: 'R&D Credits', before: '$0', after: '$95,000', improvement: 'New credits captured' },
+                    { metric: 'Depreciation', before: '$45,000', after: '$125,000', improvement: '178% increase' },
+                ],
+                testimonial: {
+                    quote: "Sterling & Associates transformed our tax strategy. The savings we achieved in the first year alone paid for their services for the next decade.",
+                    author: "David Miller",
+                    role: "CEO, TechCorp Industries",
+                    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
+                },
+                timeline: '3 months to full implementation'
+            },
+            {
+                id: 2,
+                title: 'IPO Success with Clean Audit Opinion',
+                client: 'Global Ventures',
+                industry: 'Technology',
+                service: 'Audit & Assurance',
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
+                challenge: 'Global Ventures was preparing for an IPO but had a complex financial structure with multiple subsidiaries and inconsistent accounting practices that posed significant audit risks.',
+                solution: 'We implemented a comprehensive audit readiness program, standardized accounting policies across all entities, and established robust internal controls to meet SOX compliance requirements.',
+                results: [
+                    { metric: 'Audit Issues', before: '47 findings', after: '0 findings', improvement: '100% resolved' },
+                    { metric: 'IPO Timeline', before: '24 months', after: '14 months', improvement: '10 months faster' },
+                    { metric: 'Valuation Premium', before: 'N/A', after: '+15%', improvement: 'Clean audit impact' },
+                ],
+                testimonial: {
+                    quote: "The audit team's attention to detail and professionalism exceeded our expectations. They were true partners in making our IPO a success.",
+                    author: "Amanda Chen",
+                    role: "CFO, Global Ventures",
+                    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face"
+                },
+                timeline: '14 months to IPO'
+            },
+            {
+                id: 3,
+                title: '$3.2M Saved in Acquisition Due Diligence',
+                client: 'Summit Holdings',
+                industry: 'Private Equity',
+                service: 'Financial Advisory',
+                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop',
+                challenge: 'Summit Holdings was acquiring a competitor for $28M but the seller\'s financials seemed too optimistic. They needed expert due diligence to validate the numbers and identify risks.',
+                solution: 'Our forensic accounting team conducted deep-dive due diligence, uncovering revenue recognition issues, undisclosed liabilities, and inflated EBITDA calculations.',
+                results: [
+                    { metric: 'Purchase Price', before: '$28M', after: '$24.8M', improvement: '$3.2M saved' },
+                    { metric: 'Hidden Liabilities', before: 'Unknown', after: '$1.8M identified', improvement: 'Risk avoided' },
+                    { metric: 'EBITDA Adjustment', before: '$4.2M', after: '$3.1M', improvement: '26% correction' },
+                ],
+                testimonial: {
+                    quote: "Their M&A advisory was invaluable during our acquisition. The issues they uncovered saved us millions and helped us negotiate a much better deal.",
+                    author: "James Thompson",
+                    role: "Founder, Summit Holdings",
+                    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=face"
+                },
+                timeline: '6 weeks due diligence'
+            },
+            {
+                id: 4,
+                title: 'Healthcare Group Achieves Real-Time Financials',
+                client: 'MedFirst Healthcare',
+                industry: 'Healthcare',
+                service: 'Bookkeeping Services',
+                image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop',
+                challenge: 'MedFirst had 18 months of backlogged bookkeeping, inconsistent records across 12 locations, and no visibility into true financial performance.',
+                solution: 'We cleaned up historical records, implemented cloud-based accounting with automated bank feeds, and created standardized processes across all locations.',
+                results: [
+                    { metric: 'Closing Time', before: '45 days', after: '5 days', improvement: '89% faster' },
+                    { metric: 'Monthly Hours', before: '80 hours', after: '12 hours', improvement: '85% reduction' },
+                    { metric: 'Error Rate', before: '8.5%', after: '0.2%', improvement: '98% improvement' },
+                ],
+                testimonial: {
+                    quote: "Going from 18 months behind to real-time financials transformed how we run our business. We can now make decisions based on actual data.",
+                    author: "Dr. Sarah Williams",
+                    role: "CEO, MedFirst Healthcare",
+                    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face"
+                },
+                timeline: '90 days to clean books'
+            },
+            {
+                id: 5,
+                title: 'Multi-State Payroll Compliance Achieved',
+                client: 'Logistics Pro Inc.',
+                industry: 'Transportation',
+                service: 'Payroll Solutions',
+                image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=500&fit=crop',
+                challenge: 'Logistics Pro had 450 employees across 12 states with manual payroll processing leading to compliance issues, penalties, and employee dissatisfaction.',
+                solution: 'We implemented automated payroll with multi-state compliance, integrated time tracking, and employee self-service portals.',
+                results: [
+                    { metric: 'Processing Time', before: '40 hours', after: '4 hours', improvement: '90% reduction' },
+                    { metric: 'Compliance Penalties', before: '$45K/year', after: '$0', improvement: '100% eliminated' },
+                    { metric: 'Employee Satisfaction', before: '62%', after: '94%', improvement: '52% increase' },
+                ],
+                testimonial: {
+                    quote: "The transformation in our payroll operations was remarkable. Zero compliance issues and our employees love the new self-service portal.",
+                    author: "Mark Rodriguez",
+                    role: "HR Director, Logistics Pro",
+                    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+                },
+                timeline: '60 days implementation'
+            },
+            {
+                id: 6,
+                title: 'S-Corp Election Saves $48K Annually',
+                client: 'Creative Studio Co.',
+                industry: 'Creative Services',
+                service: 'Business Formation',
+                image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=500&fit=crop',
+                challenge: 'Creative Studio was operating as a sole proprietorship paying excessive self-employment taxes on $320K annual income with no liability protection.',
+                solution: 'We restructured as an S-Corporation with optimal salary/distribution split, implemented retirement plans, and established proper corporate governance.',
+                results: [
+                    { metric: 'SE Tax Savings', before: '$0', after: '$48,000/yr', improvement: 'Annual savings' },
+                    { metric: 'Retirement Contrib.', before: '$6,500', after: '$66,000', improvement: '10x increase' },
+                    { metric: 'Liability Protection', before: 'None', after: 'Full', improvement: 'Assets protected' },
+                ],
+                testimonial: {
+                    quote: "I wish I had made this change years ago. The tax savings alone are incredible, but the peace of mind from proper structure is priceless.",
+                    author: "Jennifer Walsh",
+                    role: "Founder, Creative Studio Co.",
+                    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face"
+                },
+                timeline: '30 days to S-Corp election'
+            },
+        ];
         
         // ============ NAVIGATION ============
-        const Navigation = () => {
+        const Navigation = ({ currentPage, setCurrentPage }) => {
             const [isScrolled, setIsScrolled] = useState(false);
             const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
             
@@ -358,51 +737,68 @@
                 window.addEventListener('scroll', handleScroll);
                 return () => window.removeEventListener('scroll', handleScroll);
             }, []);
+
+            const isInnerPage = currentPage !== 'home';
+            const navBg = isInnerPage || isScrolled;
             
             const navLinks = [
-                { name: 'Home', href: '#home' },
-                { name: 'Services', href: '#services' },
-                { name: 'About', href: '#about' },
-                { name: 'Team', href: '#team' },
-                { name: 'Pricing', href: '#pricing' },
-                { name: 'Resources', href: '#resources' },
-                { name: 'Contact', href: '#contact' },
+                { name: 'Home', page: 'home' },
+                { name: 'Services', page: 'home', anchor: '#services' },
+                { name: 'Case Studies', page: 'case-studies' },
+                { name: 'Calculator', page: 'calculator' },
+                { name: 'Client Portal', page: 'portal' },
+                { name: 'Contact', page: 'home', anchor: '#contact' },
             ];
+
+            const handleNavClick = (link) => {
+                setIsMobileMenuOpen(false);
+                if (link.anchor && link.page === 'home') {
+                    setCurrentPage('home');
+                    setTimeout(() => {
+                        document.querySelector(link.anchor)?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                } else if (link.anchor && currentPage === 'home') {
+                    document.querySelector(link.anchor)?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    setCurrentPage(link.page);
+                    window.scrollTo(0, 0);
+                }
+            };
             
             return (
-                <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
+                <nav className={`fixed w-full z-50 transition-all duration-500 ${navBg ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex justify-between items-center">
-                            <a href="#home" className="flex items-center space-x-3">
+                            <button onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }} className="flex items-center space-x-3">
                                 <div className="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center">
                                     <span className="text-navy-900 font-display font-bold text-xl">S</span>
                                 </div>
-                                <span className={`font-display text-xl font-semibold ${isScrolled ? 'text-navy-900' : 'text-white'}`}>
+                                <span className={`font-display text-xl font-semibold ${navBg ? 'text-navy-900' : 'text-white'}`}>
                                     Sterling & Associates
                                 </span>
-                            </a>
+                            </button>
                             
                             <div className="hidden lg:flex items-center space-x-8">
                                 {navLinks.map((link) => (
-                                    <a
+                                    <button
                                         key={link.name}
-                                        href={link.href}
-                                        className={`nav-link font-medium text-sm tracking-wide transition-colors ${isScrolled ? 'text-navy-700 hover:text-gold-600' : 'text-white/90 hover:text-white'}`}
+                                        onClick={() => handleNavClick(link)}
+                                        className={`nav-link font-medium text-sm tracking-wide transition-colors ${navBg ? 'text-navy-700 hover:text-gold-600' : 'text-white/90 hover:text-white'}`}
                                     >
                                         {link.name}
-                                    </a>
+                                    </button>
                                 ))}
-                                <a
-                                    href="#contact"
+                                <button
+                                    onClick={() => handleNavClick({ page: 'home', anchor: '#contact' })}
                                     className="gold-gradient text-navy-900 px-6 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-gold-500/30 transition-all duration-300 hover:-translate-y-0.5"
                                 >
                                     Free Consultation
-                                </a>
+                                </button>
                             </div>
                             
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className={`lg:hidden ${isScrolled ? 'text-navy-900' : 'text-white'}`}
+                                className={`lg:hidden ${navBg ? 'text-navy-900' : 'text-white'}`}
                             >
                                 {isMobileMenuOpen ? <Icons.X /> : <Icons.Menu />}
                             </button>
@@ -413,21 +809,20 @@
                             <div className="lg:hidden mt-4 pb-4 border-t border-navy-100">
                                 <div className="flex flex-col space-y-3 pt-4">
                                     {navLinks.map((link) => (
-                                        <a
+                                        <button
                                             key={link.name}
-                                            href={link.href}
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                            className="text-navy-700 hover:text-gold-600 font-medium py-2"
+                                            onClick={() => handleNavClick(link)}
+                                            className="text-navy-700 hover:text-gold-600 font-medium py-2 text-left"
                                         >
                                             {link.name}
-                                        </a>
+                                        </button>
                                     ))}
-                                    <a
-                                        href="#contact"
+                                    <button
+                                        onClick={() => handleNavClick({ page: 'home', anchor: '#contact' })}
                                         className="gold-gradient text-navy-900 px-6 py-3 rounded-full font-semibold text-center mt-4"
                                     >
                                         Free Consultation
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         )}
@@ -435,9 +830,32 @@
                 </nav>
             );
         };
+
+        // ============ PAGE HEADER ============
+        const PageHeader = ({ title, subtitle, breadcrumb }) => (
+            <section className="hero-gradient pt-32 pb-16 relative overflow-hidden">
+                <div className="absolute top-20 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl animate-float"></div>
+                <div className="absolute bottom-10 left-10 w-64 h-64 bg-gold-400/5 rounded-full blur-3xl"></div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    {breadcrumb && (
+                        <div className="flex items-center gap-2 text-navy-300 text-sm mb-4">
+                            <button onClick={breadcrumb.onClick} className="hover:text-gold-400 transition-colors">
+                                {breadcrumb.parent}
+                            </button>
+                            <Icons.ChevronRight />
+                            <span className="text-gold-400">{breadcrumb.current}</span>
+                        </div>
+                    )}
+                    <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+                        {title}
+                    </h1>
+                    {subtitle && <p className="text-xl text-navy-200 max-w-2xl">{subtitle}</p>}
+                </div>
+            </section>
+        );
         
         // ============ HERO SECTION ============
-        const HeroSection = () => {
+        const HeroSection = ({ setCurrentPage }) => {
             return (
                 <section id="home" className="relative min-h-screen hero-gradient overflow-hidden">
                     {/* Decorative Elements */}
@@ -471,12 +889,12 @@
                                         Schedule Free Consultation
                                         <Icons.ArrowRight />
                                     </a>
-                                    <a
-                                        href="#services"
+                                    <button
+                                        onClick={() => { setCurrentPage('calculator'); window.scrollTo(0, 0); }}
                                         className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center gap-2"
                                     >
-                                        Explore Services
-                                    </a>
+                                        Try Tax Calculator
+                                    </button>
                                 </div>
                                 
                                 {/* Trust Badges */}
@@ -562,46 +980,7 @@
         };
         
         // ============ SERVICES SECTION ============
-        const ServicesSection = () => {
-            const services = [
-                {
-                    icon: <Icons.Calculator />,
-                    title: 'Tax Planning & Preparation',
-                    description: 'Strategic tax planning to minimize liabilities and maximize returns. We handle individual, business, and international tax compliance.',
-                    features: ['Federal & State Tax Returns', 'Tax Strategy Optimization', 'IRS Representation', 'International Tax Planning']
-                },
-                {
-                    icon: <Icons.Document />,
-                    title: 'Audit & Assurance',
-                    description: 'Comprehensive audit services that provide stakeholders with confidence in your financial statements.',
-                    features: ['Financial Statement Audits', 'Internal Audits', 'SOC Examinations', 'Agreed-Upon Procedures']
-                },
-                {
-                    icon: <Icons.Chart />,
-                    title: 'Financial Advisory',
-                    description: 'Expert guidance for complex financial decisions, from M&A transactions to business valuations.',
-                    features: ['M&A Advisory', 'Business Valuation', 'Restructuring Services', 'Forensic Accounting']
-                },
-                {
-                    icon: <Icons.Briefcase />,
-                    title: 'Bookkeeping Services',
-                    description: 'Accurate and timely bookkeeping that gives you a clear picture of your financial health.',
-                    features: ['Monthly Bookkeeping', 'Financial Reporting', 'Accounts Payable/Receivable', 'Bank Reconciliation']
-                },
-                {
-                    icon: <Icons.Users />,
-                    title: 'Payroll Solutions',
-                    description: 'Streamlined payroll processing that ensures compliance and keeps your team happy.',
-                    features: ['Payroll Processing', 'Tax Filings & Deposits', 'Employee Benefits Admin', 'Time & Attendance']
-                },
-                {
-                    icon: <Icons.Shield />,
-                    title: 'Business Formation',
-                    description: 'From entity selection to compliance setup, we help launch your business on solid ground.',
-                    features: ['Entity Selection', 'State Registrations', 'Operating Agreements', 'Compliance Setup']
-                },
-            ];
-            
+        const ServicesSection = ({ setCurrentPage, setSelectedService }) => {
             return (
                 <section id="services" className="py-24 bg-white">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -611,37 +990,788 @@
                                 Comprehensive Financial Solutions
                             </h2>
                             <p className="text-lg text-navy-600">
-                                From startups to enterprises, we provide tailored accounting and advisory services that drive growth and ensure compliance.
+                                From tax planning to business advisory, we offer a full suite of accounting services tailored to your unique needs.
                             </p>
                         </div>
                         
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {services.map((service, index) => (
+                            {servicesData.map((service, index) => (
                                 <div
                                     key={index}
-                                    className="group bg-white rounded-2xl p-8 border border-navy-100 card-hover hover:border-gold-300"
+                                    className="bg-white rounded-2xl p-8 border border-navy-100 card-hover group cursor-pointer"
+                                    onClick={() => { setSelectedService(service.id); setCurrentPage('service-detail'); window.scrollTo(0, 0); }}
                                 >
-                                    <div className="service-icon w-16 h-16 rounded-xl flex items-center justify-center text-gold-600 mb-6 group-hover:scale-110 transition-transform">
+                                    <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center text-gold-600 mb-6 group-hover:scale-110 transition-transform">
                                         {service.icon}
                                     </div>
                                     <h3 className="font-display text-xl font-bold text-navy-900 mb-3">{service.title}</h3>
-                                    <p className="text-navy-600 mb-6">{service.description}</p>
-                                    <ul className="space-y-2">
+                                    <p className="text-navy-600 mb-6">{service.shortDesc}</p>
+                                    <ul className="space-y-2 mb-6">
                                         {service.features.map((feature, idx) => (
                                             <li key={idx} className="flex items-center text-sm text-navy-500">
-                                                <span className="text-gold-500 mr-2"><Icons.Check /></span>
+                                                <span className="w-1.5 h-1.5 bg-gold-500 rounded-full mr-3"></span>
                                                 {feature}
                                             </li>
                                         ))}
                                     </ul>
-                                    <a href="#contact" className="mt-6 inline-flex items-center text-gold-600 font-semibold hover:text-gold-700 transition-colors">
-                                        Learn More <span className="ml-2"><Icons.ChevronRight /></span>
-                                    </a>
+                                    <span className="inline-flex items-center text-gold-600 font-semibold group-hover:gap-3 gap-2 transition-all">
+                                        Learn More <Icons.ArrowRight />
+                                    </span>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
+            );
+        };
+
+        // ============ SERVICE DETAIL PAGE ============
+        const ServiceDetailPage = ({ serviceId, setCurrentPage }) => {
+            const service = servicesData.find(s => s.id === serviceId) || servicesData[0];
+
+            return (
+                <div className="min-h-screen bg-white">
+                    <PageHeader 
+                        title={service.title}
+                        subtitle={service.shortDesc}
+                        breadcrumb={{
+                            parent: 'Services',
+                            current: service.title,
+                            onClick: () => { setCurrentPage('home'); setTimeout(() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' }), 100); }
+                        }}
+                    />
+                    
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                        {/* Overview */}
+                        <div className="grid lg:grid-cols-2 gap-16 mb-20">
+                            <div>
+                                <h2 className="font-display text-3xl font-bold text-navy-900 mb-6">Overview</h2>
+                                <p className="text-lg text-navy-600 mb-8">{service.description}</p>
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    {service.benefits.map((benefit, idx) => (
+                                        <div key={idx} className="flex items-start gap-3">
+                                            <span className="text-gold-500 mt-1"><Icons.Check /></span>
+                                            <span className="text-navy-700">{benefit}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="bg-navy-50 rounded-2xl p-8">
+                                <div className="w-20 h-20 service-icon rounded-2xl flex items-center justify-center text-gold-600 mb-6">
+                                    {service.icon}
+                                </div>
+                                <h3 className="font-display text-2xl font-bold text-navy-900 mb-4">Key Features</h3>
+                                <ul className="space-y-3">
+                                    {service.features.map((feature, idx) => (
+                                        <li key={idx} className="flex items-center gap-3 text-navy-700">
+                                            <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <button
+                                    onClick={() => { setCurrentPage('home'); setTimeout(() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }}
+                                    className="w-full mt-8 gold-gradient text-navy-900 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-gold-500/30 transition-all"
+                                >
+                                    Get Started Today
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Process */}
+                        <div className="mb-20">
+                            <h2 className="font-display text-3xl font-bold text-navy-900 mb-10 text-center">Our Process</h2>
+                            <div className="grid md:grid-cols-5 gap-4">
+                                {service.process.map((step, idx) => (
+                                    <div key={idx} className="relative">
+                                        <div className="bg-white border border-navy-100 rounded-xl p-6 h-full card-hover">
+                                            <div className="w-10 h-10 gold-gradient rounded-full flex items-center justify-center text-navy-900 font-bold mb-4">
+                                                {step.step}
+                                            </div>
+                                            <h4 className="font-semibold text-navy-900 mb-2">{step.title}</h4>
+                                            <p className="text-sm text-navy-600">{step.desc}</p>
+                                        </div>
+                                        {idx < service.process.length - 1 && (
+                                            <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-gold-400 z-10">
+                                                <Icons.ChevronRight />
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Case Study */}
+                        <div className="bg-navy-900 rounded-3xl p-8 md:p-12">
+                            <span className="text-gold-400 font-semibold text-sm uppercase tracking-wider">Case Study</span>
+                            <h2 className="font-display text-3xl font-bold text-white mt-4 mb-8">{service.caseStudy.client}</h2>
+                            <div className="grid md:grid-cols-3 gap-8">
+                                <div>
+                                    <h4 className="text-gold-400 font-semibold mb-2">Challenge</h4>
+                                    <p className="text-navy-200">{service.caseStudy.challenge}</p>
+                                </div>
+                                <div>
+                                    <h4 className="text-gold-400 font-semibold mb-2">Solution</h4>
+                                    <p className="text-navy-200">{service.caseStudy.solution}</p>
+                                </div>
+                                <div>
+                                    <h4 className="text-gold-400 font-semibold mb-2">Result</h4>
+                                    <p className="text-white font-semibold text-xl">{service.caseStudy.result}</p>
+                                </div>
+                            </div>
+                            <button
+                                onClick={() => { setCurrentPage('case-studies'); window.scrollTo(0, 0); }}
+                                className="mt-8 inline-flex items-center gap-2 text-gold-400 font-semibold hover:gap-3 transition-all"
+                            >
+                                View All Case Studies <Icons.ArrowRight />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // ============ CASE STUDIES PAGE ============
+        const CaseStudiesPage = ({ setCurrentPage }) => {
+            const [selectedStudy, setSelectedStudy] = useState(null);
+
+            if (selectedStudy) {
+                const study = caseStudiesData.find(s => s.id === selectedStudy);
+                return (
+                    <div className="min-h-screen bg-white">
+                        <PageHeader 
+                            title={study.title}
+                            subtitle={`${study.client} • ${study.industry}`}
+                            breadcrumb={{
+                                parent: 'Case Studies',
+                                current: study.client,
+                                onClick: () => setSelectedStudy(null)
+                            }}
+                        />
+                        
+                        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                            <img src={study.image} alt={study.title} className="w-full h-80 object-cover rounded-2xl mb-12" />
+                            
+                            <div className="grid md:grid-cols-3 gap-8 mb-12">
+                                <div className="bg-navy-50 rounded-xl p-6">
+                                    <h4 className="font-semibold text-navy-900 mb-2">Industry</h4>
+                                    <p className="text-navy-600">{study.industry}</p>
+                                </div>
+                                <div className="bg-navy-50 rounded-xl p-6">
+                                    <h4 className="font-semibold text-navy-900 mb-2">Service</h4>
+                                    <p className="text-navy-600">{study.service}</p>
+                                </div>
+                                <div className="bg-navy-50 rounded-xl p-6">
+                                    <h4 className="font-semibold text-navy-900 mb-2">Timeline</h4>
+                                    <p className="text-navy-600">{study.timeline}</p>
+                                </div>
+                            </div>
+
+                            <div className="prose prose-lg max-w-none mb-12">
+                                <h2 className="font-display text-2xl font-bold text-navy-900 mb-4">The Challenge</h2>
+                                <p className="text-navy-600 mb-8">{study.challenge}</p>
+                                
+                                <h2 className="font-display text-2xl font-bold text-navy-900 mb-4">Our Solution</h2>
+                                <p className="text-navy-600 mb-8">{study.solution}</p>
+                            </div>
+
+                            <div className="bg-gradient-to-r from-navy-900 to-navy-800 rounded-2xl p-8 mb-12">
+                                <h2 className="font-display text-2xl font-bold text-white mb-8">Results & Metrics</h2>
+                                <div className="grid md:grid-cols-3 gap-6">
+                                    {study.results.map((result, idx) => (
+                                        <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                                            <h4 className="text-gold-400 font-semibold mb-4">{result.metric}</h4>
+                                            <div className="flex items-center gap-4 mb-2">
+                                                <div>
+                                                    <div className="text-navy-300 text-sm">Before</div>
+                                                    <div className="text-white font-semibold">{result.before}</div>
+                                                </div>
+                                                <Icons.ArrowRight />
+                                                <div>
+                                                    <div className="text-navy-300 text-sm">After</div>
+                                                    <div className="text-gold-400 font-bold text-xl">{result.after}</div>
+                                                </div>
+                                            </div>
+                                            <div className="text-green-400 text-sm font-medium flex items-center gap-1">
+                                                <Icons.ArrowTrendUp />
+                                                {result.improvement}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Client Testimonial */}
+                            <div className="bg-gold-50 rounded-2xl p-8 border border-gold-200">
+                                <Icons.Quote />
+                                <p className="text-xl text-navy-800 font-light mt-4 mb-6">"{study.testimonial.quote}"</p>
+                                <div className="flex items-center">
+                                    <img src={study.testimonial.image} alt={study.testimonial.author} className="w-14 h-14 rounded-full object-cover mr-4" />
+                                    <div>
+                                        <div className="font-semibold text-navy-900">{study.testimonial.author}</div>
+                                        <div className="text-navy-600">{study.testimonial.role}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="min-h-screen bg-white">
+                    <PageHeader 
+                        title="Case Studies"
+                        subtitle="Real results from real clients. Explore how we've helped businesses transform their financial operations."
+                    />
+                    
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {caseStudiesData.map((study) => (
+                                <div 
+                                    key={study.id}
+                                    onClick={() => setSelectedStudy(study.id)}
+                                    className="bg-white rounded-2xl overflow-hidden border border-navy-100 card-hover cursor-pointer group"
+                                >
+                                    <div className="relative overflow-hidden">
+                                        <img src={study.image} alt={study.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        <div className="absolute top-4 left-4">
+                                            <span className="bg-gold-500 text-navy-900 text-xs font-semibold px-3 py-1 rounded-full">{study.service}</span>
+                                        </div>
+                                    </div>
+                                    <div className="p-6">
+                                        <div className="text-navy-500 text-sm mb-2">{study.client} • {study.industry}</div>
+                                        <h3 className="font-display text-xl font-bold text-navy-900 mb-4">{study.title}</h3>
+                                        <div className="flex items-center gap-6 text-sm">
+                                            {study.results.slice(0, 2).map((result, idx) => (
+                                                <div key={idx}>
+                                                    <div className="text-gold-600 font-bold">{result.after}</div>
+                                                    <div className="text-navy-500">{result.metric}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="mt-4 pt-4 border-t border-navy-100">
+                                            <span className="inline-flex items-center gap-2 text-gold-600 font-semibold group-hover:gap-3 transition-all">
+                                                Read Case Study <Icons.ArrowRight />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // ============ TAX CALCULATOR PAGE ============
+        const TaxCalculatorPage = ({ setCurrentPage }) => {
+            const [revenue, setRevenue] = useState(500000);
+            const [entityType, setEntityType] = useState('sole-proprietor');
+            const [hasRetirementPlan, setHasRetirementPlan] = useState(false);
+            const [hasRD, setHasRD] = useState(false);
+            const [employees, setEmployees] = useState(5);
+
+            const calculateSavings = () => {
+                let baseTax = revenue * 0.32; // Simplified base tax
+                let potentialSavings = 0;
+                let strategies = [];
+
+                // Entity structure optimization
+                if (entityType === 'sole-proprietor' && revenue > 100000) {
+                    const sCorpSavings = Math.min(revenue * 0.153 * 0.4, 50000);
+                    potentialSavings += sCorpSavings;
+                    strategies.push({ name: 'S-Corp Election', savings: sCorpSavings, desc: 'Reduce self-employment taxes' });
+                }
+
+                // Retirement plan
+                if (!hasRetirementPlan && revenue > 50000) {
+                    const retirementSavings = Math.min(66000, revenue * 0.25) * 0.32;
+                    potentialSavings += retirementSavings;
+                    strategies.push({ name: 'Retirement Plan Setup', savings: retirementSavings, desc: 'Solo 401(k) or SEP-IRA contributions' });
+                }
+
+                // R&D Credits
+                if (hasRD) {
+                    const rdSavings = Math.min(revenue * 0.05, 250000);
+                    potentialSavings += rdSavings;
+                    strategies.push({ name: 'R&D Tax Credits', savings: rdSavings, desc: 'Federal research & development credits' });
+                }
+
+                // Section 199A
+                if (revenue < 400000 && entityType !== 'c-corp') {
+                    const qbiSavings = revenue * 0.2 * 0.24;
+                    potentialSavings += qbiSavings;
+                    strategies.push({ name: 'QBI Deduction', savings: qbiSavings, desc: 'Qualified Business Income deduction' });
+                }
+
+                // Employee benefits
+                if (employees > 0) {
+                    const benefitsSavings = employees * 2000;
+                    potentialSavings += benefitsSavings;
+                    strategies.push({ name: 'Employee Benefits', savings: benefitsSavings, desc: 'Health insurance & benefit deductions' });
+                }
+
+                return { baseTax, potentialSavings, strategies, effectiveRate: ((baseTax - potentialSavings) / revenue * 100).toFixed(1) };
+            };
+
+            const results = calculateSavings();
+            const formatCurrency = (num) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(num);
+
+            return (
+                <div className="min-h-screen bg-white">
+                    <PageHeader 
+                        title="Tax Savings Calculator"
+                        subtitle="Discover your potential tax savings with our interactive calculator. Get a personalized estimate in seconds."
+                    />
+                    
+                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                        <div className="grid lg:grid-cols-2 gap-12">
+                            {/* Calculator Inputs */}
+                            <div className="bg-white rounded-2xl p-8 border border-navy-100 shadow-lg">
+                                <h2 className="font-display text-2xl font-bold text-navy-900 mb-8">Enter Your Details</h2>
+                                
+                                <div className="space-y-8">
+                                    {/* Revenue Slider */}
+                                    <div>
+                                        <label className="block text-navy-700 font-semibold mb-3">Annual Revenue</label>
+                                        <div className="text-3xl font-display font-bold text-gold-600 mb-4">{formatCurrency(revenue)}</div>
+                                        <input
+                                            type="range"
+                                            min="50000"
+                                            max="5000000"
+                                            step="10000"
+                                            value={revenue}
+                                            onChange={(e) => setRevenue(Number(e.target.value))}
+                                            className="w-full h-2 bg-navy-100 rounded-lg appearance-none cursor-pointer range-slider"
+                                        />
+                                        <div className="flex justify-between text-sm text-navy-500 mt-2">
+                                            <span>$50K</span>
+                                            <span>$5M</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Entity Type */}
+                                    <div>
+                                        <label className="block text-navy-700 font-semibold mb-3">Business Entity Type</label>
+                                        <div className="grid grid-cols-2 gap-3">
+                                            {[
+                                                { id: 'sole-proprietor', label: 'Sole Proprietor' },
+                                                { id: 's-corp', label: 'S-Corporation' },
+                                                { id: 'llc', label: 'LLC' },
+                                                { id: 'c-corp', label: 'C-Corporation' },
+                                            ].map((type) => (
+                                                <button
+                                                    key={type.id}
+                                                    onClick={() => setEntityType(type.id)}
+                                                    className={`px-4 py-3 rounded-lg font-medium transition-all ${entityType === type.id ? 'bg-navy-900 text-white' : 'bg-navy-50 text-navy-700 hover:bg-navy-100'}`}
+                                                >
+                                                    {type.label}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Employees */}
+                                    <div>
+                                        <label className="block text-navy-700 font-semibold mb-3">Number of Employees: {employees}</label>
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="100"
+                                            value={employees}
+                                            onChange={(e) => setEmployees(Number(e.target.value))}
+                                            className="w-full h-2 bg-navy-100 rounded-lg appearance-none cursor-pointer range-slider"
+                                        />
+                                    </div>
+
+                                    {/* Checkboxes */}
+                                    <div className="space-y-4">
+                                        <label className="flex items-center gap-3 cursor-pointer group">
+                                            <div className={`w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all ${hasRetirementPlan ? 'bg-gold-500 border-gold-500' : 'border-navy-300 group-hover:border-gold-400'}`}>
+                                                {hasRetirementPlan && <Icons.Check />}
+                                            </div>
+                                            <input type="checkbox" className="hidden" checked={hasRetirementPlan} onChange={(e) => setHasRetirementPlan(e.target.checked)} />
+                                            <span className="text-navy-700">I already have a retirement plan</span>
+                                        </label>
+                                        <label className="flex items-center gap-3 cursor-pointer group">
+                                            <div className={`w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all ${hasRD ? 'bg-gold-500 border-gold-500' : 'border-navy-300 group-hover:border-gold-400'}`}>
+                                                {hasRD && <Icons.Check />}
+                                            </div>
+                                            <input type="checkbox" className="hidden" checked={hasRD} onChange={(e) => setHasRD(e.target.checked)} />
+                                            <span className="text-navy-700">My business has R&D activities</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Results */}
+                            <div>
+                                <div className="bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl p-8 text-white mb-8">
+                                    <h2 className="font-display text-2xl font-bold mb-6">Your Potential Savings</h2>
+                                    <div className="text-5xl font-display font-bold text-gold-400 mb-2">
+                                        {formatCurrency(results.potentialSavings)}
+                                    </div>
+                                    <p className="text-navy-200 mb-6">Estimated annual tax savings</p>
+                                    
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="bg-white/10 rounded-lg p-4">
+                                            <div className="text-navy-300 text-sm">Current Est. Tax</div>
+                                            <div className="text-xl font-semibold">{formatCurrency(results.baseTax)}</div>
+                                        </div>
+                                        <div className="bg-white/10 rounded-lg p-4">
+                                            <div className="text-navy-300 text-sm">Optimized Tax</div>
+                                            <div className="text-xl font-semibold text-gold-400">{formatCurrency(results.baseTax - results.potentialSavings)}</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="mt-6 pt-6 border-t border-white/20">
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-navy-200">Effective Tax Rate</span>
+                                            <span className="text-2xl font-bold text-gold-400">{results.effectiveRate}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white rounded-2xl p-6 border border-navy-100">
+                                    <h3 className="font-display text-xl font-bold text-navy-900 mb-4">Recommended Strategies</h3>
+                                    <div className="space-y-4">
+                                        {results.strategies.map((strategy, idx) => (
+                                            <div key={idx} className="flex items-start justify-between p-4 bg-navy-50 rounded-lg">
+                                                <div>
+                                                    <div className="font-semibold text-navy-900">{strategy.name}</div>
+                                                    <div className="text-sm text-navy-600">{strategy.desc}</div>
+                                                </div>
+                                                <div className="text-gold-600 font-bold whitespace-nowrap ml-4">
+                                                    +{formatCurrency(strategy.savings)}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    
+                                    <button
+                                        onClick={() => { setCurrentPage('home'); setTimeout(() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }}
+                                        className="w-full mt-6 gold-gradient text-navy-900 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-gold-500/30 transition-all"
+                                    >
+                                        Get Your Personalized Tax Strategy
+                                    </button>
+                                </div>
+
+                                <p className="text-sm text-navy-500 mt-4 text-center">
+                                    * This calculator provides estimates only. Actual savings depend on your specific situation. Consult with our experts for accurate projections.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // ============ CLIENT PORTAL PAGE ============
+        const ClientPortalPage = ({ setCurrentPage }) => {
+            const [isLoggedIn, setIsLoggedIn] = useState(false);
+            const [email, setEmail] = useState('');
+            const [password, setPassword] = useState('');
+            const [showPassword, setShowPassword] = useState(false);
+            const [activeTab, setActiveTab] = useState('overview');
+
+            if (isLoggedIn) {
+                // Dashboard
+                const mockData = {
+                    accountBalance: 2450.00,
+                    nextPayment: '2024-02-15',
+                    documents: [
+                        { name: '2023 Tax Return - Final.pdf', date: '2024-01-15', type: 'Tax Return' },
+                        { name: 'Q4 Financial Statement.pdf', date: '2024-01-10', type: 'Financial' },
+                        { name: 'Engagement Letter 2024.pdf', date: '2024-01-02', type: 'Contract' },
+                        { name: '2023 K-1 Schedule.pdf', date: '2023-12-20', type: 'Tax Document' },
+                    ],
+                    invoices: [
+                        { id: 'INV-2024-001', date: '2024-01-15', amount: 1200, status: 'Paid' },
+                        { id: 'INV-2024-002', date: '2024-02-01', amount: 850, status: 'Pending' },
+                        { id: 'INV-2023-012', date: '2023-12-15', amount: 2400, status: 'Paid' },
+                    ],
+                    tasks: [
+                        { name: 'Upload Q4 bank statements', due: '2024-02-10', status: 'pending' },
+                        { name: 'Review draft tax return', due: '2024-02-20', status: 'pending' },
+                        { name: 'Sign engagement letter', due: '2024-01-15', status: 'completed' },
+                    ]
+                };
+
+                return (
+                    <div className="min-h-screen bg-navy-50">
+                        {/* Dashboard Header */}
+                        <div className="bg-navy-900 pt-24 pb-8">
+                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        <h1 className="font-display text-3xl font-bold text-white">Welcome back, John</h1>
+                                        <p className="text-navy-300 mt-1">Here's what's happening with your account</p>
+                                    </div>
+                                    <button
+                                        onClick={() => setIsLoggedIn(false)}
+                                        className="text-navy-300 hover:text-white transition-colors"
+                                    >
+                                        Sign Out
+                                    </button>
+                                </div>
+
+                                {/* Quick Stats */}
+                                <div className="grid md:grid-cols-4 gap-4 mt-8">
+                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                                        <div className="text-navy-300 text-sm mb-1">Account Balance</div>
+                                        <div className="text-2xl font-bold text-white">${mockData.accountBalance.toFixed(2)}</div>
+                                    </div>
+                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                                        <div className="text-navy-300 text-sm mb-1">Next Payment Due</div>
+                                        <div className="text-2xl font-bold text-gold-400">Feb 15, 2024</div>
+                                    </div>
+                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                                        <div className="text-navy-300 text-sm mb-1">Documents</div>
+                                        <div className="text-2xl font-bold text-white">{mockData.documents.length}</div>
+                                    </div>
+                                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                                        <div className="text-navy-300 text-sm mb-1">Pending Tasks</div>
+                                        <div className="text-2xl font-bold text-white">{mockData.tasks.filter(t => t.status === 'pending').length}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Tabs */}
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4">
+                            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                                <div className="flex border-b border-navy-100">
+                                    {['overview', 'documents', 'invoices'].map((tab) => (
+                                        <button
+                                            key={tab}
+                                            onClick={() => setActiveTab(tab)}
+                                            className={`px-6 py-4 font-medium capitalize transition-colors ${activeTab === tab ? 'text-gold-600 border-b-2 border-gold-500' : 'text-navy-600 hover:text-navy-900'}`}
+                                        >
+                                            {tab}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                <div className="p-6">
+                                    {activeTab === 'overview' && (
+                                        <div className="grid md:grid-cols-2 gap-8">
+                                            {/* Recent Documents */}
+                                            <div>
+                                                <h3 className="font-display text-lg font-bold text-navy-900 mb-4 flex items-center gap-2">
+                                                    <Icons.Folder /> Recent Documents
+                                                </h3>
+                                                <div className="space-y-3">
+                                                    {mockData.documents.slice(0, 3).map((doc, idx) => (
+                                                        <div key={idx} className="flex items-center justify-between p-3 bg-navy-50 rounded-lg hover:bg-navy-100 transition-colors cursor-pointer">
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-10 h-10 bg-gold-100 rounded-lg flex items-center justify-center text-gold-600">
+                                                                    <Icons.Document />
+                                                                </div>
+                                                                <div>
+                                                                    <div className="font-medium text-navy-900 text-sm">{doc.name}</div>
+                                                                    <div className="text-xs text-navy-500">{doc.date}</div>
+                                                                </div>
+                                                            </div>
+                                                            <button className="text-gold-600 hover:text-gold-700">
+                                                                <Icons.Download />
+                                                            </button>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            {/* Tasks */}
+                                            <div>
+                                                <h3 className="font-display text-lg font-bold text-navy-900 mb-4 flex items-center gap-2">
+                                                    <Icons.Check /> Action Items
+                                                </h3>
+                                                <div className="space-y-3">
+                                                    {mockData.tasks.map((task, idx) => (
+                                                        <div key={idx} className={`flex items-center justify-between p-3 rounded-lg ${task.status === 'completed' ? 'bg-green-50' : 'bg-navy-50'}`}>
+                                                            <div className="flex items-center gap-3">
+                                                                <div className={`w-5 h-5 rounded-full flex items-center justify-center ${task.status === 'completed' ? 'bg-green-500 text-white' : 'border-2 border-navy-300'}`}>
+                                                                    {task.status === 'completed' && <Icons.Check />}
+                                                                </div>
+                                                                <div>
+                                                                    <div className={`font-medium text-sm ${task.status === 'completed' ? 'text-navy-500 line-through' : 'text-navy-900'}`}>{task.name}</div>
+                                                                    <div className="text-xs text-navy-500">Due: {task.due}</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {activeTab === 'documents' && (
+                                        <div>
+                                            <div className="flex justify-between items-center mb-6">
+                                                <h3 className="font-display text-lg font-bold text-navy-900">All Documents</h3>
+                                                <button className="gold-gradient text-navy-900 px-4 py-2 rounded-lg font-semibold text-sm">
+                                                    Upload Document
+                                                </button>
+                                            </div>
+                                            <div className="overflow-x-auto">
+                                                <table className="w-full">
+                                                    <thead>
+                                                        <tr className="text-left text-sm text-navy-500 border-b border-navy-100">
+                                                            <th className="pb-3 font-medium">Document Name</th>
+                                                            <th className="pb-3 font-medium">Type</th>
+                                                            <th className="pb-3 font-medium">Date</th>
+                                                            <th className="pb-3 font-medium">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {mockData.documents.map((doc, idx) => (
+                                                            <tr key={idx} className="border-b border-navy-50 hover:bg-navy-50">
+                                                                <td className="py-4 font-medium text-navy-900">{doc.name}</td>
+                                                                <td className="py-4 text-navy-600">{doc.type}</td>
+                                                                <td className="py-4 text-navy-600">{doc.date}</td>
+                                                                <td className="py-4">
+                                                                    <button className="text-gold-600 hover:text-gold-700 flex items-center gap-1 text-sm font-medium">
+                                                                        <Icons.Download /> Download
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {activeTab === 'invoices' && (
+                                        <div>
+                                            <h3 className="font-display text-lg font-bold text-navy-900 mb-6">Invoices & Payments</h3>
+                                            <div className="overflow-x-auto">
+                                                <table className="w-full">
+                                                    <thead>
+                                                        <tr className="text-left text-sm text-navy-500 border-b border-navy-100">
+                                                            <th className="pb-3 font-medium">Invoice #</th>
+                                                            <th className="pb-3 font-medium">Date</th>
+                                                            <th className="pb-3 font-medium">Amount</th>
+                                                            <th className="pb-3 font-medium">Status</th>
+                                                            <th className="pb-3 font-medium">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {mockData.invoices.map((inv, idx) => (
+                                                            <tr key={idx} className="border-b border-navy-50 hover:bg-navy-50">
+                                                                <td className="py-4 font-medium text-navy-900">{inv.id}</td>
+                                                                <td className="py-4 text-navy-600">{inv.date}</td>
+                                                                <td className="py-4 text-navy-900 font-semibold">${inv.amount.toFixed(2)}</td>
+                                                                <td className="py-4">
+                                                                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${inv.status === 'Paid' ? 'bg-green-100 text-green-700' : 'bg-gold-100 text-gold-700'}`}>
+                                                                        {inv.status}
+                                                                    </span>
+                                                                </td>
+                                                                <td className="py-4">
+                                                                    {inv.status === 'Pending' ? (
+                                                                        <button className="gold-gradient text-navy-900 px-4 py-1.5 rounded-lg font-semibold text-sm">
+                                                                            Pay Now
+                                                                        </button>
+                                                                    ) : (
+                                                                        <button className="text-gold-600 hover:text-gold-700 flex items-center gap-1 text-sm font-medium">
+                                                                            <Icons.Download /> PDF
+                                                                        </button>
+                                                                    )}
+                                                                </td>
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="py-8"></div>
+                    </div>
+                );
+            }
+
+            // Login Page
+            return (
+                <div className="min-h-screen hero-gradient flex items-center justify-center px-4 pt-20">
+                    <div className="max-w-md w-full">
+                        <div className="text-center mb-8">
+                            <div className="w-16 h-16 gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <span className="text-navy-900 font-display font-bold text-2xl">S</span>
+                            </div>
+                            <h1 className="font-display text-3xl font-bold text-white mb-2">Client Portal</h1>
+                            <p className="text-navy-300">Access your documents, invoices, and account</p>
+                        </div>
+
+                        <div className="bg-white rounded-2xl p-8 shadow-2xl">
+                            <form onSubmit={(e) => { e.preventDefault(); setIsLoggedIn(true); }}>
+                                <div className="mb-6">
+                                    <label className="block text-navy-700 font-medium mb-2 text-sm">Email Address</label>
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="john@company.com"
+                                        className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:ring-2 focus:ring-gold-500/20 transition-all"
+                                    />
+                                </div>
+                                <div className="mb-6">
+                                    <label className="block text-navy-700 font-medium mb-2 text-sm">Password</label>
+                                    <div className="relative">
+                                        <input
+                                            type={showPassword ? 'text' : 'password'}
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            placeholder="••••••••"
+                                            className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:ring-2 focus:ring-gold-500/20 transition-all pr-12"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className="absolute right-4 top-1/2 -translate-y-1/2 text-navy-400 hover:text-navy-600"
+                                        >
+                                            {showPassword ? <Icons.EyeOff /> : <Icons.Eye />}
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-between mb-6">
+                                    <label className="flex items-center gap-2 cursor-pointer">
+                                        <input type="checkbox" className="w-4 h-4 rounded border-navy-300 text-gold-500 focus:ring-gold-500" />
+                                        <span className="text-sm text-navy-600">Remember me</span>
+                                    </label>
+                                    <a href="#" className="text-sm text-gold-600 hover:text-gold-700 font-medium">Forgot password?</a>
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="w-full gold-gradient text-navy-900 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-gold-500/30 transition-all flex items-center justify-center gap-2"
+                                >
+                                    <Icons.Lock />
+                                    Sign In Securely
+                                </button>
+                            </form>
+
+                            <div className="mt-6 pt-6 border-t border-navy-100 text-center">
+                                <p className="text-navy-600 text-sm">
+                                    Don't have an account? <button onClick={() => { setCurrentPage('home'); setTimeout(() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="text-gold-600 font-semibold hover:text-gold-700">Contact us</button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="mt-8 text-center">
+                            <div className="flex items-center justify-center gap-4 text-navy-300 text-sm">
+                                <div className="flex items-center gap-2">
+                                    <Icons.Lock />
+                                    256-bit SSL Encrypted
+                                </div>
+                                <span>•</span>
+                                <div>SOC 2 Compliant</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             );
         };
         
@@ -657,60 +1787,61 @@
                                     25 Years of Financial Excellence
                                 </h2>
                                 <p className="text-lg text-navy-600 mb-6">
-                                    Founded in 1999, Sterling & Associates has grown from a small local practice to one of the region's most respected accounting firms. Our commitment to excellence, integrity, and client success has remained unchanged.
+                                    Founded in 1999, Sterling & Associates has grown from a small local practice to a nationally recognized accounting firm. Our journey has been defined by an unwavering commitment to client success and professional excellence.
                                 </p>
                                 <p className="text-navy-600 mb-8">
-                                    We combine decades of expertise with modern technology to deliver accounting solutions that truly make a difference. Our team of 50+ certified professionals serves clients across all industries, from emerging startups to established enterprises.
+                                    Today, we serve over 500 businesses across diverse industries, from innovative startups to established enterprises. Our team of 50+ certified professionals brings Big 4 experience with boutique firm attention.
                                 </p>
                                 
-                                <div className="grid grid-cols-2 gap-6 mb-8">
-                                    <div>
-                                        <div className="text-3xl font-display font-bold text-gold-600 mb-1">500+</div>
-                                        <p className="text-navy-600">Active Clients</p>
+                                <div className="grid grid-cols-2 gap-6">
+                                    <div className="bg-white rounded-xl p-6 border border-navy-100">
+                                        <div className="text-3xl font-display font-bold text-gold-600 mb-2">500+</div>
+                                        <p className="text-navy-600">Clients Served</p>
                                     </div>
-                                    <div>
-                                        <div className="text-3xl font-display font-bold text-gold-600 mb-1">$500M+</div>
+                                    <div className="bg-white rounded-xl p-6 border border-navy-100">
+                                        <div className="text-3xl font-display font-bold text-gold-600 mb-2">$500M+</div>
                                         <p className="text-navy-600">Tax Savings</p>
                                     </div>
-                                    <div>
-                                        <div className="text-3xl font-display font-bold text-gold-600 mb-1">50+</div>
-                                        <p className="text-navy-600">Expert Team</p>
-                                    </div>
-                                    <div>
-                                        <div className="text-3xl font-display font-bold text-gold-600 mb-1">98%</div>
-                                        <p className="text-navy-600">Client Retention</p>
-                                    </div>
                                 </div>
-                                
-                                <a href="#team" className="inline-flex items-center gold-gradient text-navy-900 px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-gold-500/30 transition-all">
-                                    Meet Our Team <span className="ml-2"><Icons.ArrowRight /></span>
-                                </a>
                             </div>
                             
                             <div className="relative">
-                                <div className="bg-white rounded-2xl p-8 shadow-xl">
-                                    <h3 className="font-display text-2xl font-bold text-navy-900 mb-6">Our Core Values</h3>
-                                    <div className="space-y-6">
-                                        {[
-                                            { title: 'Integrity', desc: 'We uphold the highest ethical standards in everything we do.' },
-                                            { title: 'Excellence', desc: 'We deliver exceptional quality and continuously improve our services.' },
-                                            { title: 'Partnership', desc: 'We build lasting relationships based on trust and mutual success.' },
-                                            { title: 'Innovation', desc: 'We embrace technology to provide efficient, modern solutions.' },
-                                        ].map((value, index) => (
-                                            <div key={index} className="flex items-start">
-                                                <div className="w-10 h-10 gold-gradient rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
-                                                    <span className="text-navy-900 font-bold">{index + 1}</span>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-semibold text-navy-900">{value.title}</h4>
-                                                    <p className="text-navy-600 text-sm">{value.desc}</p>
-                                                </div>
-                                            </div>
-                                        ))}
+                                <div className="aspect-square rounded-2xl overflow-hidden">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=800&fit=crop"
+                                        alt="Team meeting"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="absolute -bottom-8 -left-8 bg-white rounded-xl p-6 shadow-xl border border-navy-100">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 gold-gradient rounded-full flex items-center justify-center">
+                                            <Icons.Shield />
+                                        </div>
+                                        <div>
+                                            <div className="font-display font-bold text-navy-900">100% Satisfaction</div>
+                                            <div className="text-navy-500 text-sm">Guaranteed Results</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="absolute -bottom-4 -right-4 w-24 h-24 gold-gradient rounded-full opacity-20 blur-2xl"></div>
                             </div>
+                        </div>
+                        
+                        {/* Values */}
+                        <div className="mt-24 grid md:grid-cols-3 gap-8">
+                            {[
+                                { title: 'Integrity', desc: 'We uphold the highest ethical standards in all our dealings, building trust through transparency.' },
+                                { title: 'Excellence', desc: 'We strive for excellence in every engagement, delivering solutions that exceed expectations.' },
+                                { title: 'Partnership', desc: 'We view ourselves as partners in your success, invested in your long-term growth.' },
+                            ].map((value, index) => (
+                                <div key={index} className="text-center">
+                                    <div className="w-16 h-16 gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                        <span className="text-navy-900 font-display font-bold text-2xl">{value.title[0]}</span>
+                                    </div>
+                                    <h3 className="font-display text-xl font-bold text-navy-900 mb-3">{value.title}</h3>
+                                    <p className="text-navy-600">{value.desc}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -722,26 +1853,26 @@
             const team = [
                 {
                     name: 'Robert Sterling',
-                    role: 'Managing Partner',
-                    bio: 'CPA with 30+ years experience in corporate taxation and strategic planning.',
+                    role: 'Founding Partner & CEO',
+                    bio: '30+ years experience. Former Big 4 Partner.',
                     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face'
                 },
                 {
                     name: 'Sarah Mitchell',
-                    role: 'Tax Director',
-                    bio: 'Former IRS senior advisor with expertise in complex tax matters.',
-                    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face'
+                    role: 'Managing Partner, Tax',
+                    bio: 'CPA, MST. Tax strategy specialist.',
+                    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face'
                 },
                 {
                     name: 'Michael Chen',
-                    role: 'Audit Partner',
-                    bio: 'Big 4 alumnus specializing in financial services and tech industry audits.',
+                    role: 'Partner, Audit & Assurance',
+                    bio: 'CPA. 20+ years audit experience.',
                     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face'
                 },
                 {
                     name: 'Jennifer Walsh',
-                    role: 'Advisory Partner',
-                    bio: 'M&A specialist with $2B+ in completed transactions.',
+                    role: 'Director, Advisory Services',
+                    bio: 'CFA, MBA. M&A and valuation expert.',
                     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face'
                 },
             ];
@@ -755,41 +1886,35 @@
                                 Meet Our Leadership
                             </h2>
                             <p className="text-lg text-navy-600">
-                                Our partners bring decades of combined experience from Big 4 firms, industry, and government to serve your needs.
+                                Our partners bring decades of combined experience from the world's top accounting firms.
                             </p>
                         </div>
                         
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {team.map((member, index) => (
-                                <div key={index} className="group text-center">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
+                                <div key={index} className="group">
+                                    <div className="relative overflow-hidden rounded-2xl mb-6">
                                         <img
                                             src={member.image}
                                             alt={member.name}
                                             className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
                                             <div className="flex gap-3">
-                                                <a href="#" className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-gold-500 transition-colors">
+                                                <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy-900 hover:bg-gold-400 transition-colors">
                                                     <Icons.LinkedIn />
                                                 </a>
-                                                <a href="#" className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-gold-500 transition-colors">
+                                                <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-navy-900 hover:bg-gold-400 transition-colors">
                                                     <Icons.Email />
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                     <h3 className="font-display text-xl font-bold text-navy-900">{member.name}</h3>
-                                    <p className="text-gold-600 font-medium mb-2">{member.role}</p>
-                                    <p className="text-navy-600 text-sm">{member.bio}</p>
+                                    <p className="text-gold-600 font-medium text-sm mb-2">{member.role}</p>
+                                    <p className="text-navy-500 text-sm">{member.bio}</p>
                                 </div>
                             ))}
-                        </div>
-                        
-                        <div className="text-center mt-12">
-                            <a href="#contact" className="inline-flex items-center text-gold-600 font-semibold hover:text-gold-700 transition-colors">
-                                View All Team Members <span className="ml-2"><Icons.ArrowRight /></span>
-                            </a>
                         </div>
                     </div>
                 </section>
@@ -1112,8 +2237,8 @@
                                     Insights & Articles
                                 </h2>
                             </div>
-                            <a href="#" className="inline-flex items-center text-gold-600 font-semibold hover:text-gold-700 transition-colors mt-4 md:mt-0">
-                                View All Articles <span className="ml-2"><Icons.ArrowRight /></span>
+                            <a href="#" className="mt-4 md:mt-0 inline-flex items-center text-gold-600 font-semibold hover:gap-3 gap-2 transition-all">
+                                View All Articles <Icons.ArrowRight />
                             </a>
                         </div>
                         
@@ -1133,18 +2258,23 @@
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <div className="flex items-center text-navy-500 text-sm mb-3">
-                                            <span className="flex items-center"><Icons.Calendar /><span className="ml-1">{resource.date}</span></span>
-                                            <span className="mx-2">•</span>
-                                            <span className="flex items-center"><Icons.Clock /><span className="ml-1">{resource.readTime}</span></span>
+                                        <div className="flex items-center gap-4 text-sm text-navy-500 mb-3">
+                                            <span className="flex items-center gap-1">
+                                                <Icons.Calendar />
+                                                {resource.date}
+                                            </span>
+                                            <span className="flex items-center gap-1">
+                                                <Icons.Clock />
+                                                {resource.readTime}
+                                            </span>
                                         </div>
                                         <h3 className="font-display text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition-colors">
                                             {resource.title}
                                         </h3>
-                                        <p className="text-navy-600 text-sm mb-4">{resource.excerpt}</p>
-                                        <a href="#" className="inline-flex items-center text-gold-600 font-semibold text-sm hover:text-gold-700 transition-colors">
-                                            Read More <span className="ml-1"><Icons.ChevronRight /></span>
-                                        </a>
+                                        <p className="text-navy-600 mb-4">{resource.excerpt}</p>
+                                        <span className="inline-flex items-center text-gold-600 font-semibold group-hover:gap-3 gap-2 transition-all">
+                                            Read More <Icons.ArrowRight />
+                                        </span>
                                     </div>
                                 </article>
                             ))}
@@ -1164,8 +2294,8 @@
                             <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold-400/5 rounded-full blur-3xl"></div>
                             
                             <div className="relative">
-                                <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">
-                                    Ready to Transform Your Finances?
+                                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                                    Ready to Optimize Your Finances?
                                 </h2>
                                 <p className="text-xl text-navy-200 mb-8 max-w-2xl mx-auto">
                                     Schedule a free consultation with our experts and discover how we can help your business thrive.
@@ -1173,14 +2303,14 @@
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                     <a
                                         href="#contact"
-                                        className="gold-gradient text-navy-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:shadow-gold-500/30 transition-all inline-flex items-center justify-center gap-2"
+                                        className="gold-gradient text-navy-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:shadow-gold-500/30 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center gap-2"
                                     >
-                                        Schedule Free Consultation
+                                        Get Free Consultation
                                         <Icons.ArrowRight />
                                     </a>
                                     <a
-                                        href="tel:+15551234567"
-                                        className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2"
+                                        href="tel:5551234567"
+                                        className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 inline-flex items-center justify-center gap-2"
                                     >
                                         <Icons.Phone />
                                         (555) 123-4567
@@ -1411,31 +2541,50 @@
         };
         
         // ============ FOOTER ============
-        const Footer = () => {
+        const Footer = ({ setCurrentPage }) => {
             const [email, setEmail] = useState('');
             
             const footerLinks = {
                 services: [
-                    { name: 'Tax Planning', href: '#services' },
-                    { name: 'Audit & Assurance', href: '#services' },
-                    { name: 'Financial Advisory', href: '#services' },
-                    { name: 'Bookkeeping', href: '#services' },
-                    { name: 'Payroll Solutions', href: '#services' },
+                    { name: 'Tax Planning', page: 'service-detail', id: 'tax-planning' },
+                    { name: 'Audit & Assurance', page: 'service-detail', id: 'audit' },
+                    { name: 'Financial Advisory', page: 'service-detail', id: 'advisory' },
+                    { name: 'Bookkeeping', page: 'service-detail', id: 'bookkeeping' },
+                    { name: 'Payroll Solutions', page: 'service-detail', id: 'payroll' },
                 ],
                 company: [
-                    { name: 'About Us', href: '#about' },
-                    { name: 'Our Team', href: '#team' },
-                    { name: 'Careers', href: '#' },
-                    { name: 'News & Insights', href: '#resources' },
-                    { name: 'Contact', href: '#contact' },
+                    { name: 'About Us', anchor: '#about' },
+                    { name: 'Our Team', anchor: '#team' },
+                    { name: 'Case Studies', page: 'case-studies' },
+                    { name: 'News & Insights', anchor: '#resources' },
+                    { name: 'Contact', anchor: '#contact' },
                 ],
                 resources: [
-                    { name: 'Tax Calculator', href: '#' },
-                    { name: 'Financial Templates', href: '#' },
-                    { name: 'Industry Reports', href: '#' },
-                    { name: 'Webinars', href: '#' },
-                    { name: 'Client Portal', href: '#' },
+                    { name: 'Tax Calculator', page: 'calculator' },
+                    { name: 'Financial Templates', anchor: '#' },
+                    { name: 'Industry Reports', anchor: '#' },
+                    { name: 'Webinars', anchor: '#' },
+                    { name: 'Client Portal', page: 'portal' },
                 ],
+            };
+
+            const handleLinkClick = (link, serviceId = null) => {
+                if (link.page) {
+                    if (link.page === 'service-detail' && serviceId) {
+                        setCurrentPage('home');
+                        setTimeout(() => {
+                            document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    } else {
+                        setCurrentPage(link.page);
+                        window.scrollTo(0, 0);
+                    }
+                } else if (link.anchor) {
+                    setCurrentPage('home');
+                    setTimeout(() => {
+                        document.querySelector(link.anchor)?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
             };
             
             return (
@@ -1498,9 +2647,9 @@
                                 <ul className="space-y-3">
                                     {footerLinks.services.map((link, index) => (
                                         <li key={index}>
-                                            <a href={link.href} className="text-navy-300 hover:text-gold-400 transition-colors">
+                                            <button onClick={() => handleLinkClick(link, link.id)} className="text-navy-300 hover:text-gold-400 transition-colors text-left">
                                                 {link.name}
-                                            </a>
+                                            </button>
                                         </li>
                                     ))}
                                 </ul>
@@ -1511,9 +2660,9 @@
                                 <ul className="space-y-3">
                                     {footerLinks.company.map((link, index) => (
                                         <li key={index}>
-                                            <a href={link.href} className="text-navy-300 hover:text-gold-400 transition-colors">
+                                            <button onClick={() => handleLinkClick(link)} className="text-navy-300 hover:text-gold-400 transition-colors text-left">
                                                 {link.name}
-                                            </a>
+                                            </button>
                                         </li>
                                     ))}
                                 </ul>
@@ -1524,9 +2673,9 @@
                                 <ul className="space-y-3">
                                     {footerLinks.resources.map((link, index) => (
                                         <li key={index}>
-                                            <a href={link.href} className="text-navy-300 hover:text-gold-400 transition-colors">
+                                            <button onClick={() => handleLinkClick(link)} className="text-navy-300 hover:text-gold-400 transition-colors text-left">
                                                 {link.name}
-                                            </a>
+                                            </button>
                                         </li>
                                     ))}
                                 </ul>
@@ -1548,24 +2697,49 @@
                 </footer>
             );
         };
+
+        // ============ HOME PAGE ============
+        const HomePage = ({ setCurrentPage, setSelectedService }) => (
+            <>
+                <HeroSection setCurrentPage={setCurrentPage} />
+                <ClientsSection />
+                <ServicesSection setCurrentPage={setCurrentPage} setSelectedService={setSelectedService} />
+                <AboutSection />
+                <TeamSection />
+                <TestimonialsSection />
+                <PricingSection />
+                <FAQSection />
+                <ResourcesSection />
+                <CTASection />
+                <ContactSection />
+            </>
+        );
         
         // ============ MAIN APP ============
         const App = () => {
+            const [currentPage, setCurrentPage] = useState('home');
+            const [selectedService, setSelectedService] = useState('tax-planning');
+
+            const renderPage = () => {
+                switch(currentPage) {
+                    case 'case-studies':
+                        return <CaseStudiesPage setCurrentPage={setCurrentPage} />;
+                    case 'calculator':
+                        return <TaxCalculatorPage setCurrentPage={setCurrentPage} />;
+                    case 'portal':
+                        return <ClientPortalPage setCurrentPage={setCurrentPage} />;
+                    case 'service-detail':
+                        return <ServiceDetailPage serviceId={selectedService} setCurrentPage={setCurrentPage} />;
+                    default:
+                        return <HomePage setCurrentPage={setCurrentPage} setSelectedService={setSelectedService} />;
+                }
+            };
+
             return (
                 <div className="min-h-screen">
-                    <Navigation />
-                    <HeroSection />
-                    <ClientsSection />
-                    <ServicesSection />
-                    <AboutSection />
-                    <TeamSection />
-                    <TestimonialsSection />
-                    <PricingSection />
-                    <FAQSection />
-                    <ResourcesSection />
-                    <CTASection />
-                    <ContactSection />
-                    <Footer />
+                    <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                    {renderPage()}
+                    <Footer setCurrentPage={setCurrentPage} />
                 </div>
             );
         };
